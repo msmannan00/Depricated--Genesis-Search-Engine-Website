@@ -17,16 +17,27 @@
 	
 </head>
 	
-<body>
+<body onload="onPageLoad()">
 		
 <!--top bar-->
 <div class="top-bar">
-	<div style="margin-top: 24px;margin-left: 13.5px">
-		<img src="images/logo.png" style="width: 7.51%;float: left" alt=""/>
-		<form style="width: 40%;float: left">
+	<div class="top-bar_sub-container">
+		<img src="images/logo.png" class="logo" alt=""/>
+		<form class="top-bar_search-form">
 			<input autocomplete="off" type="text" class="form-control search-box" onMouseOut="onSerchBoxMouseOut()" onMouseOver="onSerchBoxMouseOver()" onfocus="onSerchBoxSelected()" onfocusout="onSerchBoxUnSelected()" id="searchbox">
+		    <p class="top-bar_catagories-container">
+			   <span class="top-bar_catagories" id="catagory_all" onMouseOver="onCatagoryMouseOver('catagory_all')" onMouseOut="onCatagoryMouseOut('catagory_all')" onMouseDown="onCatagorySelected('catagory_all')">All</span>
+			   <span class="top-bar_catagories" style="margin-left: 12px" id="catagory_images" onMouseOver="onCatagoryMouseOver('catagory_images')" onMouseOut="onCatagoryMouseOut('catagory_images')" onMouseDown="onCatagorySelected('catagory_images')">Images</span>
+			   <span class="top-bar_catagories" id="catagory_video" onMouseOver="onCatagoryMouseOver('catagory_video')" onMouseOut="onCatagoryMouseOut('catagory_video')" onMouseDown="onCatagorySelected('catagory_video')">Videos</span>
+			   <span class="top-bar_catagories" id="catagory_book" onMouseOver="onCatagoryMouseOver('catagory_book')" onMouseOut="onCatagoryMouseOut('catagory_book')" onMouseDown="onCatagorySelected('catagory_book')">Books</span>
+			   <span class="top-bar_catagories" id="catagory_finance" onMouseOver="onCatagoryMouseOver('catagory_finance')" onMouseOut="onCatagoryMouseOut('catagory_finance')" onMouseDown="onCatagorySelected('catagory_finance')">Finance</span>
+			   <span class="top-bar_catagories" id="catagory_news" onMouseOver="onCatagoryMouseOver('catagory_news')" onMouseOut="onCatagoryMouseOut('catagory_news')" onMouseDown="onCatagorySelected('catagory_news')">News</span>
+			</p>
 		</form>
+		<img style="float: left;width: 1.14%;margin-top: 8px;margin-left: -22px" src="images/search.png" alt=""/>
+
 	</div>
+	<div style="clear: left;"></div>
 </div>
 	
 <!--footer-->

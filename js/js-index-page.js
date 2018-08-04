@@ -2,8 +2,6 @@
 
 var isSearchBoxSelected = false
 
-
-
 // Helper Method
 
 function onSerchBoxSelected() 

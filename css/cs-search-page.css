@@ -1,7 +1,7 @@
 .top-bar
 {
 	height: 124px;
-	background-color:#FAFAFA;
+	background-color:#fafafa;
 	margin-top: -20px;
 
 	border-bottom-color:#efefef;
@@ -56,13 +56,55 @@
 {
 	border-radius: 3px;
 	align-self: center;
-	height:45px;
+	height:46px;
 	box-shadow: 0 1.5px 1.5px -1.5px #999999;
 	border-color: #e7e7e7;
 	width:100%;
 	margin:0 auto;
 	display:block;
-	margin-top: -5px;
+	margin-top: -6px;
 	margin-left: 17px
 }
 
+.top-bar_sub-container
+{
+	margin-top: 24px;
+	margin-left: 13.5px
+}
+
+.top-bar_search-form
+{
+	width: 40%;
+	float: left
+}
+
+.top-bar_catagories-container
+{
+	margin-top: 27.50px;
+	margin-left: -3px;
+}
+
+.top-bar_catagories
+{
+	margin-left: 20px;
+	font-size: 12.5px;
+	color: #77778C;
+	cursor: pointer;
+	display: block;
+	width: 49px;
+	height: 30px;
+	float: left;
+	text-align: center;
+	-webkit-touch-callout: none; 
+    -webkit-user-select: none;  
+    -khtml-user-select: none;   
+    -moz-user-select: none;     
+    -ms-user-select: none;     
+    user-select: none;    
+}
+
+.logo
+{
+	width: 7.50%;
+	float: left
+}
