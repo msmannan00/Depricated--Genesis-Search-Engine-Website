@@ -1,0 +1,126 @@
+.top-bar
+{
+	color:#000000;
+	margin-right: 30;
+	text-align: right;
+}
+
+.top-bar_text-space
+{
+	margin-right: 13px;
+}
+
+.footer-container
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%
+}
+
+.footer-content
+{
+	background-color:#f2f2f2;
+	height: 42px;
+	border-bottom-color:#efefef;
+	border-style: solid;border-right-width: 0px;
+	border-left-width: 0px;border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-color:#e3e3e3;
+}
+
+.footer-text-top
+{
+	color:#767676;
+	font-size: 15px;
+	margin-left: 30px;
+	padding-top: 10px;
+	text-align: left;
+}
+
+.footer-text-bottom
+{
+	color:#767676;
+	font-size: 13px;
+	margin-left: 30px;
+	padding-top: 11px;
+	text-align: left;
+}
+
+.footer-text-bottom_spacing
+{
+	margin-left: 23px
+}
+
+.form-language-text
+{
+	font-size: 13px;
+	text-align:center;
+	padding-top: 25px
+}
+
+.form-language-text_color
+{
+	color:#7173f8;
+}
+
+.form-search-button
+{
+	margin-top: 33px;
+	background-color:#f2f2f2;
+	height: 37px;
+	width:135px;
+	border-width: 0px;
+	color:#6c6c6c;
+	font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.form-lucky-button
+{
+	margin-left: 4px;
+	margin-top: 33px;
+	background-color:#f2f2f2;
+	height: 37px;
+	border-width: 0px;
+	width:135px;
+	color:#6c6c6c;
+	font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.form-button-container
+{
+	margin:0 auto;
+	display:block;
+	width: 25%;
+}
+
+.search-box
+{
+	border-radius: 3px;
+	align-self: center;
+	height:45px;
+	box-shadow: 0 1.5px 1.5px -1.5px #999999;
+	border-color: #e7e7e7;
+	width:52.6%;
+	margin:0 auto;
+	display:block;
+}
+
+.logo
+{
+	margin:0 auto;
+	display:block;
+	margin-top: 13%;
+	margin-bottom: 26px;		
+}
+
+.top-bar-space
+{
+	margin:0 auto;
+	display:block;
+	margin-top: 13.15%
+}
+

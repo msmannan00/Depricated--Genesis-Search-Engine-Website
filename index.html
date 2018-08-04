@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--libraries initializations-->
+<head>
+	<title>Bootstrap Agency Template</title><br>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="js/jquery-1.11.3.min.js"></script> 
+	<script src="js/bootstrap.js"></script>
+	<script src="js/js-index-page.js"></script>
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/cs-index-page.css">
+</head>
+	
+<body>
+	
+<!--top bar-->
+ <p class="top-bar">
+ 	<span class="top-bar_text-space">Gmail</span>
+    <span class="top-bar_text-space">Images</span>
+ </p>
+	
+<!--search bar-->
+<div class="container" >
+  <form>
+    <div class="form-group" >
+		<div>
+			<img src="images/logo.png" class="logo" alt="" />
+	        <input autocomplete="off" type="text" class="form-control search-box" onMouseOut="onSerchBoxMouseOut()" onMouseOver="onSerchBoxMouseOver()" onfocus="onSerchBoxSelected()" onfocusout="onSerchBoxUnSelected()" id="searchbox">
+			<div class="form-button-container">
+				<input type="submit" class="form-search-button" onMouseOver="onSearchButtonHoverStyle('searchbutton')" onMouseOut="onSearchButtonOutStyle('searchbutton')" id="searchbutton" value="Boggle Search">
+				<input type="submit" class="form-lucky-button" onMouseOver="onSearchButtonHoverStyle('luckybutton')" onMouseOut="onSearchButtonOutStyle('luckybutton')" id="luckybutton" value="I'm Feeling Lucky">
+			</div>
+		   <p class="form-language-text">Boogle offered in: <span class="form-language-text_color">English</span></p>
+		</div>
+    </div>	 
+  </form>
+</div>
+	
+<!--footer-->
+<div class="footer-container">
+	<!--footer first line-->
+	<footer class="footer-content">
+	   <p class="footer-text-top">Pakistan</p>
+	</footer>
+
+	<!--footer second line-->
+	<footer class="footer-content">
+	   <p class="footer-text-bottom">
+		   
+		   <span>Business</span>
+		   <span class="footer-text-bottom_spacing">Terms</span>
+		   <span class="footer-text-bottom_spacing">About</span>
+		   
+	   </p>
+	</footer>
+</div>
+	
+</body>
+</html>
