@@ -1,0 +1,2 @@
+# TorSearchEngine
+This is a search engine based project targeting the websites of deep web aka onion network. This would be a website and crawler one of its kind bringing modern day search engine to find pages of the hidden web. This repository is to promote research in the field of hidden web and to make optimized crawler for brining new links to centralized database along with that ensuring outdated or blocked links are also filtered out
