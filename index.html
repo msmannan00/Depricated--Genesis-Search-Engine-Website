@@ -17,48 +17,42 @@
 </head>
 	
 <body>
-	
+	 
 <!--top bar-->
  <p class="top-bar">
- 	<span class="top-bar_text-space">Gmail</span>
-    <span class="top-bar_text-space">Images</span>
+ 	<span class="top-bar__catagory">Gmail</span>
+    <span class="top-bar__catagory">Images</span>
  </p>
 	
 <!--search bar-->
-<div class="container" >
-  <form>
-    <div class="form-group" >
-		<div>
-			<img src="images/logo.png" class="logo" alt="" />
-	        <input autocomplete="off" type="text" class="form-control search-box" onMouseOut="onSerchBoxMouseOut()" onMouseOver="onSerchBoxMouseOver()" onfocus="onSerchBoxSelected()" onfocusout="onSerchBoxUnSelected()" id="searchbox">
-			<div class="form-button-container">
-				<input type="submit" class="form-search-button" onMouseOver="onSearchButtonHoverStyle('searchbutton')" onMouseOut="onSearchButtonOutStyle('searchbutton')" id="searchbutton" value="Boggle Search">
-				<input type="submit" class="form-lucky-button" onMouseOver="onSearchButtonHoverStyle('luckybutton')" onMouseOut="onSearchButtonOutStyle('luckybutton')" id="luckybutton" value="I'm Feeling Lucky">
-			</div>
-		   <p class="form-language-text">Boogle offered in: <span class="form-language-text_color">English</span></p>
-		</div>
-    </div>	 
-  </form>
-</div>
+ <form class="search">
+	<img src="images/logo.png" class="search__logo" alt="" />
+    <input autocomplete="off" type="text" class="form-control search__search-box" id="searchbox">
+	<div class="search__button-container">
+		<input type="submit" class="search__search-button search__spacing-left-button" id="searchbutton" value="Boggle Search">
+		<input type="submit" class="search__search-button search__spacing-right-button" id="luckybutton" value="I'm Feeling Lucky">
+	</div>
+    <p class="search__language-text">Boogle offered in: <span class="search__language-name">English</span></p>
+ </form>
+	
 	
 <!--footer-->
-<div class="footer-container">
+<div class="footer-bar">
 	<!--footer first line-->
-	<footer class="footer-content">
-	   <p class="footer-text-top">Pakistan</p>
+	<footer class="footer-bar__footer-content">
+	   <p class="footer-bar__footer-text-top">Pakistan</p>
 	</footer>
 
 	<!--footer second line-->
-	<footer class="footer-content">
-	   <p class="footer-text-bottom">
-		   
-		   <span>Business</span>
-		   <span class="footer-text-bottom_spacing">Terms</span>
-		   <span class="footer-text-bottom_spacing">About</span>
-		   
+	<footer class="footer-bar__footer-content">
+	   <p class="footer-bar__footer-text-bottom">
+		   <span class="footer-bar__catagories">Business</span>
+		   <span class="footer-bar__catagories footer-bar__bottom-spacing">Terms</span>
+		   <span class="footer-bar__catagories footer-bar__bottom-spacing">About</span>
 	   </p>
 	</footer>
 </div>
+	
 	
 </body>
 </html>
