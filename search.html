@@ -14,6 +14,7 @@
 	
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/cs-search-page.css">
+	<link rel="stylesheet" href="css/cs-global-properties.css">
 	
 </head>
 	
@@ -26,7 +27,7 @@
 		<form class="top-bar__search-form">
 			<input autocomplete="off" type="text" class="form-control top-bar__search-box" id="searchbox">
 		    <p class="top-bar__catagories-container">
-			   <span class="top-bar__catagories" id="catagory_all" onMouseDown="search_manager.onCatagorySelected('catagory_all')">All</span>
+			   <span class="top-bar__catagories active" id="catagory_all" onMouseDown="search_manager.onCatagorySelected('catagory_all')">All</span>
 			   <span class="top-bar__catagories" id="catagory_images" onMouseDown="search_manager.onCatagorySelected('catagory_images')">Images</span>
 			   <span class="top-bar__catagories" id="catagory_video" onMouseDown="search_manager.onCatagorySelected('catagory_video')">Videos</span>
 			   <span class="top-bar__catagories" id="catagory_book" onMouseDown="search_manager.onCatagorySelected('catagory_book')">Books</span>
@@ -51,12 +52,18 @@
 	
 <!--pagination-->
 <form class="pagination">
-   <div class="form-group" >
-	  <input type="submit" class="pagination__navigation" id="searchbutton" value="Previous">
-	  <input type="submit" class="pagination__navigation" id="luckybutton" value="Next">
-   </div>	 
+	  <input type="submit" class="pagination__navigation pagination__margin-left" id="searchbutton" value="Previous">
+		  <div class="pagination_pages">
+			 <a href="#" class="active">1</a>
+			 <a href="#">2</a>
+			 <a href="#">3</a>
+			 <a href="#">4</a>
+			 <a href="#">5</a>
+			 <a href="#">6</a>
+		  </div>
+	  <input type="submit" class="pagination__navigation pagination__margin-right" id="luckybutton" value="Next">
 </form>
-		
+
 <!--footer-->
 <div class="footer-bar">
 	<!--footer first line-->
@@ -65,7 +72,7 @@
 	</footer>
 
 	<!--footer second line-->
-	<footer class="footer-bar__footer-content">
+	<footer class="footer-bar__footer-content disable-highlight">
 	   <p class="footer-bar__footer-text-bottom">
 		   <span class="footer-bar__catagories">Business</span>
 		   <span class="footer-bar__catagories footer-bar__bottom-spacing">Terms</span>

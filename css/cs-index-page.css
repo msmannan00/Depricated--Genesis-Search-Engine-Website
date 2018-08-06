@@ -1,29 +1,25 @@
 /*top-bar style*/
-.top-bar
-{
+.top-bar{
 	color:#000000;
 	text-align: right;
 }
-.top-bar__catagory
-{
+
+.top-bar__catagory{
 	margin-right: 13px;
 	cursor: pointer;
 }
 
 /*top-bar events*/
-.top-bar__catagory:hover
-{
+.top-bar__catagory:hover{
     text-decoration: underline;
 }
 
 /*search style*/
-.search
-{
+.search{
 	margin-top: 158px;
 }
 
-.search__search-box
-{
+.search__search-box{
 	border-radius: 3px;
 	align-self: center;
 	height:45px;
@@ -35,27 +31,24 @@
 	font-size: 16px;
 	color: black;
 }
-.search__logo
-{
+
+.search__logo{
 	margin:0 auto;
 	display:block;
 	margin-bottom: 26px;		
 }
 
-.search__language-text
-{
+.search__language-text{
 	font-size: 13px;
 	text-align:center;
 	padding-top: 3px
 }
 
-.search__language-name
-{
+.search__language-name{
 	color:#7173f8;
 }
 
-.search__search-button
-{
+.search__search-button{
 	margin-top: 33px;
 	background-color:#f2f2f2;
 	height: 35px;
@@ -67,37 +60,31 @@
     display: inline-block;
 }
 
-.search__button-container
-{
+.search__button-container{
 	margin:0 auto;
 	display:block;
 	margin-bottom: 26px;		
 	width: 280px;
 }
 
-.search__spacing-left-button
-{
+.search__spacing-left-button{
 	margin-left: 0px
 }
 
-.search__spacing-right-button
-{
+.search__spacing-right-button{
 	margin-left: 5px
 }
 
 /*search events*/
-.search__search-box:hover
-{
+.search__search-box:hover{
     box-shadow : 0px 4px 8px -1.5px #cccccc;
 }
 
-.search__search-box:focus
-{
+.search__search-box:focus{
     box-shadow : 0px 4px 12px -1.5px #cccccc;
 }
 
-.search__search-button:hover
-{
+.search__search-button:hover{
 	color : #000000;
     backgroundColor : #F2F2F2;	
     background: linear-gradient(#f7f7f7,#f1f1f1);	
@@ -110,15 +97,13 @@
 
 /*footer-bar style*/
 
-.footer-bar
-{
+.footer-bar{
 	position: absolute;
 	bottom: 0;
 	width: 100%
 }
 
-.footer-bar__footer-content
-{
+.footer-bar__footer-content{
 	background-color:#f2f2f2;
 	height: 42px;
 	border-bottom-color:#efefef;
@@ -128,8 +113,7 @@
 	border-color:#e3e3e3;
 }
 
-.footer-bar__footer-text-top
-{
+.footer-bar__footer-text-top{
 	color:#767676;
 	font-size: 15px;
 	margin-left: 30px;
@@ -137,8 +121,7 @@
 	text-align: left;
 }
 
-.footer-bar__footer-text-bottom
-{
+.footer-bar__footer-text-bottom{
 	color:#767676;
 	font-size: 13px;
 	margin-left: 30px;
@@ -146,18 +129,15 @@
 	text-align: left;
 }
 
-.footer-bar__bottom-spacing
-{
+.footer-bar__bottom-spacing{
 	margin-left: 23px
 }
 
-.footer-bar__catagories
-{
+.footer-bar__catagories{
 	cursor: pointer;
 }
 
-.footer-bar__catagories:hover
-{
+.footer-bar__catagories:hover{
     text-decoration: underline;
 }
 

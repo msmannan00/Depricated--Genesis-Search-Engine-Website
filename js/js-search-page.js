@@ -5,34 +5,31 @@ class searchManager {
 	}
 	
 	onCatagorySelected(catagory){
-		if(currentCatagory !== catagory){
-			this.resetCatagory();
-			currentCatagory = catagory;
-			this.selectCatagory();
-		}
+		this.resetCatagory();
+		currentCatagory = catagory;
+		this.selectCatagory();
 	}
 
 	selectCatagory(){
-		document.getElementById(currentCatagory).style.color = "#1a88ed";
-		document.getElementById(currentCatagory).style.fontWeight = "bold";
-		document.getElementById(currentCatagory).style.borderBottom = "3px solid #1A73E8";
+		document.getElementById(currentCatagory).className += " active";
 	}
 
 	resetCatagory(){
-		document.getElementById(currentCatagory).style.color = "#77778c";
-		document.getElementById(currentCatagory).style.fontWeight = "normal";
-		document.getElementById(currentCatagory).style.borderBottom = "0px";
-	}
+		var currentActiveTab = document.getElementById(currentCatagory).className.replace(" active", "");
+		document.getElementById(currentCatagory).className = currentActiveTab;
+	} 
 
 }
 
-// global : variables
+// global : constants
 const search_manager = new searchManager();
+
+// global : variables
 var currentCatagory = "catagory_all";
 
 // global : functions
 function onPageLoad(){
-	search_manager.selectCatagory();
+	
 }
 
 

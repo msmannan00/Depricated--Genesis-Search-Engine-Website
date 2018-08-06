@@ -1,6 +1,5 @@
 /*top-bar style*/
-.top-bar
-{
+.top-bar{
 	height: 123px;
 	background-color:#fafafa;
 	margin-top: -20px;
@@ -13,34 +12,29 @@
 
 }
 
-.top-bar__sub-container
-{
+.top-bar__sub-container{
 	margin-top: 24px;
 	margin-left: 13.5px
 }
 
-.top-bar__logo
-{
+.top-bar__logo{
 	width: 7.50%;
 	float: left
 }
 
-.top-bar__search-form
-{
+.top-bar__search-form{
 	width: 40%;
 	float: left
 }
 
-.top-bar__search-icon
-{
+.top-bar__search-icon{
 	float: left;
 	width: 1.14%;
 	margin-top: 8px;
 	margin-left: -22px
 }
 
-.top-bar__search-box
-{
+.top-bar__search-box{
 	border-radius: 3px;
 	align-self: center;
 	height:46px;
@@ -55,14 +49,12 @@
 	color: black;
 }
 
-.top-bar__catagories-container
-{
+.top-bar__catagories-container{
 	margin-top: 26px;
 	margin-left: -3px;
 }
 
-.top-bar__catagories
-{
+.top-bar__catagories{
 	margin-left: 20px;
 	font-size: 13px;
 	color: #77778C;
@@ -72,35 +64,30 @@
 	height: 31px;
 	float: left;
 	text-align: center;
-	-webkit-touch-callout: none; 
-    -webkit-user-select: none;  
-    -khtml-user-select: none;   
-    -moz-user-select: none;     
-    -ms-user-select: none;     
     user-select: none;    
 }
 
 /*search events*/
-.top-bar__search-box:hover
-{
+.top-bar__search-box:hover{
     box-shadow : 0px 4px 8px -1.5px #cccccc;
 }
 
-.top-bar__search-box:focus
-{
+.top-bar__search-box:focus{
     box-shadow : 0px 4px 12px -1.5px #cccccc;
 }
 
-.top-bar__catagories:hover
-{
+.top-bar__catagories:hover:not(.active){
 	color : #000000;
 }
 
-
+.active{
+	color: #1a88ed;
+	font-weight : bold;
+	border-bottom : 3px solid #1A73E8;
+}
 
 /*result-status style*/
-.result-status
-{
+.result-status{
 	margin-left: 165.5px;
 	margin-top: 12.5px;
 	color: #77778c;
@@ -108,26 +95,25 @@
 }
 
 /*result-url style*/
-.result-url
-{
+.result-url{
 }
-.result-url__header
-{
+
+.result-url__header{
 	margin-top: 19px;
 	font-size: 18px;
 	margin-left: 165.5px;
 	color:#5578C6;
 	cursor: pointer;
 }
-.result-url__link
-{
+
+.result-url__link{
 	margin-top: -13px;
 	font-size: 14px;
 	margin-left: 165.5px;
 	color:#006621
 }
-.result-url__description
-{
+
+.result-url__description{
 	margin-top: -11px;
 	font-size: 13px;
 	margin-left: 165.5px;
@@ -136,34 +122,61 @@
 }
 
 /*result-url events*/
-.result-url__header:hover
-{
+.result-url__header:hover{
     text-decoration: underline;
 }
 
 /*pagination style*/
-.pagination
-{
+.pagination{
 	margin-left: -85px;
 }
 
-.pagination__navigation
-{
-	margin-left: 250px;
+.pagination__navigation{
 	margin-top: 40px;
 	background-color:#f2f2f2;
-	height: 37px;
+	height: 38.75px;
 	width:100px;
 	border-width: 0px;
 	color:#6c6c6c;
 	font-size: 13px;
     font-weight: bold;
     display: inline-block;
+	padding-top: 3px;
+}
+
+.pagination__margin-left{
+	margin-left: 250px;
+}
+
+.pagination__margin-right{
+	margin-left: -4px;
+}
+
+.pagination_pages {
+    display: inline-block;
+}
+
+.pagination_pages a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+	margin-left: -5px;
+}
+
+.pagination_pages a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination_pages a:hover:not(.active) {
+	background-color: #ddd;
 }
 
 /*result-url events*/
-.pagination__navigation:hover
-{
+.pagination__navigation:hover{
 	color : #000000;
     backgroundColor : #F2F2F2;	
     background: linear-gradient(#f7f7f7,#f1f1f1);	
@@ -171,19 +184,17 @@
 	border-width: 0.8px;
 	border-color:#C4C4C4;
 	border-radius: 2px;
-	cursor: default
+	cursor: default;
 }
 
 /*footer-bar style*/
-.footer-bar
-{
+.footer-bar{
 	position: absolute;
 	bottom: 0;
 	width: 100%
 }
 
-.footer-bar__footer-content
-{
+.footer-bar__footer-content{
 	background-color:#f2f2f2;
 	height: 42px;
 	border-bottom-color:#efefef;
@@ -193,8 +204,7 @@
 	border-color:#e3e3e3;
 }
 
-.footer-bar__footer-text-top
-{
+.footer-bar__footer-text-top{
 	color:#767676;
 	font-size: 15px;
 	margin-left: 30px;
@@ -202,8 +212,7 @@
 	text-align: left;
 }
 
-.footer-bar__footer-text-bottom
-{
+.footer-bar__footer-text-bottom{
 	color:#767676;
 	font-size: 13px;
 	margin-left: 30px;
@@ -211,18 +220,16 @@
 	text-align: left;
 }
 
-.footer-bar__bottom-spacing
-{
+.footer-bar__bottom-spacing{
 	margin-left: 23px
 }
 
-.footer-bar__catagories
-{
+.footer-bar__catagories{
 	cursor: pointer;
 }
 
-.footer-bar__catagories:hover
-{
+.footer-bar__catagories:hover{
     text-decoration: underline;
 }
+
 
