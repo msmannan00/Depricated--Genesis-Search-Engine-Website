@@ -1,33 +1,38 @@
-// Variables
+// search-manager : class
+class searchManager {
 
+    constructor() {
+	}
+	
+	onCatagorySelected(catagory){
+		if(currentCatagory !== catagory){
+			this.resetCatagory();
+			currentCatagory = catagory;
+			this.selectCatagory();
+		}
+	}
+
+	selectCatagory(){
+		document.getElementById(currentCatagory).style.color = "#1a88ed";
+		document.getElementById(currentCatagory).style.fontWeight = "bold";
+		document.getElementById(currentCatagory).style.borderBottom = "3px solid #1A73E8";
+	}
+
+	resetCatagory(){
+		document.getElementById(currentCatagory).style.color = "#77778c";
+		document.getElementById(currentCatagory).style.fontWeight = "normal";
+		document.getElementById(currentCatagory).style.borderBottom = "0px";
+	}
+
+}
+
+// global : variables
+const search_manager = new searchManager();
 var currentCatagory = "catagory_all";
 
-// Helper Method : Filtered Catagory
-
-function onPageLoad()
-{
-	selectCatagory(currentCatagory);
+// global : functions
+function onPageLoad(){
+	search_manager.selectCatagory();
 }
 
-function onCatagorySelected(catagory) 
-{
-	if(currentCatagory !== catagory)
-	{
-		resetCatagory(currentCatagory);
-		currentCatagory = catagory;
-		selectCatagory(currentCatagory);
-	}
-}
 
-function selectCatagory(catagory)
-{
-	document.getElementById(catagory).style.color = "#1a88ed";
-	document.getElementById(catagory).style.fontWeight = "bold";
-	document.getElementById(catagory).style.borderBottom = "3px solid #1A73E8";
-}
-function resetCatagory(catagory)
-{
-	document.getElementById(catagory).style.color = "#77778c";
-	document.getElementById(catagory).style.fontWeight = "normal";
-	document.getElementById(catagory).style.borderBottom = "0px";
-}
