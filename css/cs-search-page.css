@@ -228,6 +228,7 @@
 	cursor: pointer;
 }
 
+/*footer-bar events*/
 .footer-bar__catagories:hover{
     text-decoration: underline;
 }
