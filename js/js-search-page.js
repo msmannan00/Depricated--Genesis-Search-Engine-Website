@@ -11,11 +11,11 @@ class searchManager {
 	}
 
 	selectCatagory(){
-		document.getElementById(currentCatagory).className += " active";
+		document.getElementById(currentCatagory).className += constants.emptySpace + constants.currentCatagoryState;
 	}
 
 	resetCatagory(){
-		var currentActiveTab = document.getElementById(currentCatagory).className.replace(" active", "");
+		var currentActiveTab = document.getElementById(currentCatagory).className.replace(constants.emptySpace + constants.currentCatagoryState, constants.emptyString);
 		document.getElementById(currentCatagory).className = currentActiveTab;
 	} 
 
@@ -25,11 +25,11 @@ class searchManager {
 const search_manager = new searchManager();
 
 // global : variables
-var currentCatagory = "catagory_all";
+var currentCatagory = constants.currentCatagoryType;
 
 // global : functions
-function onPageLoad(){
-	
+function onPageLoad()
+{
 }
 
 
