@@ -1,5 +1,0 @@
-// Variables
-
-
-// Helper Method
-
