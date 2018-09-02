@@ -19,9 +19,9 @@
 </p>
 
 <!--search bar-->
-<form class="search">
+<form class="search" method="GET" action="search" enctype="multipart/form-data">
     <img src="{{ asset('images/logo.png') }}" class="search__logo disable-highlight" alt="" />
-    <input autocomplete="off" type="text" class="form-control search__search-box" id="searchbox">
+    <input autocomplete="off" type="text" class="form-control search__search-box" name="q">
     <div class="search__button-container disable-highlight">
         <input type="submit" class="search__search-button search__spacing-left-button" id="searchbutton" value="Boggle Search">
         <input type="submit" class="search__search-button search__spacing-right-button" id="luckybutton" value="I'm Feeling Lucky">
@@ -32,7 +32,7 @@
 
 <!--footer-->
     @include('blades.footer')
-   
+
 
 </body>
 </html>

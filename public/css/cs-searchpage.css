@@ -14,24 +14,25 @@
 
 .top-bar__sub-container{
 	margin-top: 24px;
-	margin-left: 13.5px
+	margin-left: 13.5px;
 }
 
 .top-bar__logo{
 	width: 7.50%;
-	float: left
+	float: left;
+    cursor:pointer;
 }
 
 .top-bar__search-form{
 	width: 40%;
-	float: left
+	float: left;
 }
 
 .top-bar__search-icon{
 	float: left;
 	width: 1.14%;
 	margin-top: 8px;
-	margin-left: -22px
+	margin-left: -22px;
 }
 
 .top-bar__search-box{

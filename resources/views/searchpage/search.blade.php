@@ -12,14 +12,13 @@
 
 
 <body>
-	
-	
+
 <!--top bar-->
 <div class="top-bar">
 	<div class="top-bar__sub-container">
-		<img src="images/logo.png" class="top-bar__logo disable-highlight" alt=""/>
-		<form class="top-bar__search-form">
-			<input autocomplete="off" type="text" class="form-control top-bar__search-box" id="searchbox">
+		<img src="images/logo.png" class="top-bar__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'"/>
+		<form class="top-bar__search-form" method="GET" action="search" enctype="multipart/form-data">
+			<input autocomplete="off" type="text" class="form-control top-bar__search-box" name="q">
 		    <p class="top-bar__catagories-container">
 			   <span class="top-bar__catagories active" id="catagory_all" onMouseDown="search_manager.onCatagorySelected('catagory_all')">All</span>
 			   <span class="top-bar__catagories disable-highlight" id="catagory_images" onMouseDown="search_manager.onCatagorySelected('catagory_images')">Images</span>

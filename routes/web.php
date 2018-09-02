@@ -12,5 +12,7 @@
 */
 
 Route::get('/', 'homepage@getView');
-Route::get('/search', 'search@getView');
 
+Route::get('/home', 'homepage@getView');
+
+Route::get('/search','validation@searchResult');
