@@ -7,7 +7,7 @@
 <!--libraries initializations-->
 <head>
     <script type="text/javascript" src="{{ asset('js/js-index-page.js') }}"></script>
-    <link href="{{ asset('css/cs-index-page.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/cs-homepage.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 </p>
 
 <!--search bar-->
-<form class="search" method="GET" action="search" enctype="multipart/form-data">
+<form class="search" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!=''">
     <img src="{{ asset('images/logo.png') }}" class="search__logo disable-highlight" alt="" />
     <input autocomplete="off" type="text" class="form-control search__search-box" name="q">
     <div class="search__button-container disable-highlight">
