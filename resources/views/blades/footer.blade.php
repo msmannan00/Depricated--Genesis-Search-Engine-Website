@@ -6,10 +6,10 @@
 
     <!--footer second line-->
     <footer class="footer-bar__footer-content disable-highlight">
-        <p class="footer-bar__footer-text-bottom">
+        <div class="footer-bar__footer-text-bottom">
             <span class="footer-bar__catagories">Business</span>
             <span class="footer-bar__catagories footer-bar__bottom-spacing">Terms</span>
             <span class="footer-bar__catagories footer-bar__bottom-spacing">About</span>
-        </p>
+        </div>
     </footer>
 </div>

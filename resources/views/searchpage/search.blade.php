@@ -18,7 +18,7 @@
 	<div class="top-bar__sub-container">
 		<img src="images/logo.png" class="top-bar__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'" />
 		<form class="top-bar__search-form" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!=''">
-			<input autocomplete="off" type="search" class="form-control top-bar__search-box" name="q" value="{{ $data['query'] }}">
+			<input autocomplete="off" type="search" class="form-control top-bar__search-box" name="q" value="{{ $search_model[config('constant.search_query_key')] }}">
 		    <p class="top-bar__catagories-container">
 			   <span class="top-bar__catagories active" id="catagory_all" onMouseDown="search_manager.onCatagorySelected('catagory_all')">All</span>
 			   <span class="top-bar__catagories disable-highlight" id="catagory_images" onMouseDown="search_manager.onCatagorySelected('catagory_images')">Images</span>
@@ -40,14 +40,14 @@
 	<div style="clear: left;"></div>
 </div>
 
-<!--result status-->
-<p class="result-status">About 1,030,000,000 results</p>
-
 <!--result-url-->
 <div class="result-url">
-	<p class="result-url__header">"Hello, World!" program - Wikipedia</p>
-	<p class="result-url__link">https://en.wikipedia.org/wiki/%22Hello,_World!%22_program</p>
-	<p class="result-url__description">A "Hello, World!" program is a computer program that outputs or displays "Hello, World!" to a user. Being a very simple program in most programming languages, it is often used to illustrate the basic syntax of a programming language for a working program, and as such is often the very first program people write</p>
+    <p class="result-status">About 1,030,000,000 results</p>
+    @foreach($web_model as $rows)
+        <p class="result-url__header">{{ $rows[config('constant.web_title_key')] }}</p>
+        <p class="result-url__link">{{ $rows[config('constant.web_url_key')] }}</p>
+        <p class="result-url__description">{{ $rows[config('constant.web_description_key')] }}</p>
+    @endforeach
 </div>
 
 <!--pagination-->

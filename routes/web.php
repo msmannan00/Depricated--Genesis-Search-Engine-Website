@@ -15,4 +15,4 @@ Route::get('/', 'homepage@getView');
 
 Route::get('/home', 'homepage@getView');
 
-Route::get('/search','validation@searchResult');
+Route::get('/search','search@searchResult');
