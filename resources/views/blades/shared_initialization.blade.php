@@ -8,5 +8,5 @@
     <link href="{{ asset('css/cs-global-properties.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
-    
+
 </head>

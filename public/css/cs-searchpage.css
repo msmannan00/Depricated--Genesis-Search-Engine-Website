@@ -120,18 +120,21 @@
 }
 
 .result-url__header{
-	margin-top: 25px;
 	font-size: 18px;
 	margin-left: 165.5px;
-	color:#5578C6;
+	color:#1a0dab;
 	cursor: pointer;
     font-family: arial,sans-serif;
     line-height: 1.2;
     white-space: nowrap;
 }
 
+.result-url__header-spacing-top{
+    margin-top: 22px;
+}
+
 .result-url__link{
-	margin-top: -13px;
+	margin-top: 0px;
 	font-size: 14px;
     font-family: arial,sans-serif;
     line-height: 16px;

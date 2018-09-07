@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--shared script initialization-->
-    @include('blades.sharedibs')
+<!--script initialization-->
+@include('blades.shared_initialization')
+@include('homepage.local_initialization')
 
-<!--libraries initializations-->
-<head>
-    <script type="text/javascript" src="{{ asset('js/js-index-page.js') }}"></script>
-    <link href="{{ asset('css/cs-homepage.css') }}" rel="stylesheet" />
-</head>
 
 <body>
 
@@ -26,6 +22,7 @@
         <input type="submit" class="search__search-button search__spacing-left-button" id="searchbutton" value="Boggle Search">
         <input type="submit" class="search__search-button search__spacing-right-button" id="luckybutton" value="I'm Feeling Lucky">
     </div>
+    <input autocomplete="off" type="hidden" name="page" value="1">
     <p class="search__language-text disable-highlight">Boogle offered in: <span class="search__language-name ">English</span></p>
 </form>
 
