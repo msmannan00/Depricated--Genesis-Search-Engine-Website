@@ -48,10 +48,11 @@
             $searchQueryTitle = $rows[config('constant.web_title_key')];
             $searchQueryUrl = $rows[config('constant.web_url_key')];
             $searchQueryDescription = $rows[config('constant.web_description_key')];
+            $webRedirection = $rows[config('constant.web_redirection_key')];
         @endphp
-        <div class="result-url__header-spacing-top"><a href="{{ $searchQueryUrl }}" class="result-url__header disable-highlight">{{ $searchQueryTitle }}</a></div>
+        <div class="result-url__header-spacing-top"><a href="{{ $webRedirection }}" class="result-url__header disable-highlight">{{ $searchQueryTitle }}</a></div>
         <p class="result-url__link disable-highlight">{{ $searchQueryUrl }}</p>
-        <p class="result-url__description disable-highlight">{{ $searchQueryDescription }}</p>
+        <p class="result-url__description disable-highlight">{{ substr($searchQueryDescription, 0, 220).'...' }}</p>
     @endforeach
 </div>
 

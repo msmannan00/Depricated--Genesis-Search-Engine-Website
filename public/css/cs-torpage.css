@@ -1,0 +1,37 @@
+/*top-bar style*/
+.top-bar__tor-alert{
+    height:50px;
+}
+
+.top-bar__tor-margin{
+    margin-top:10px;
+}
+
+.url-description
+{
+    margin-left: 165px;
+    font-size: 15px;
+    margin-top:30px;
+    font-weight: bold;
+}
+
+.result-url__description-header
+{
+    margin-left: 165px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.result-url__description-header-margin-bottom
+{
+    margin-bottom: 30px;
+}
+
+.top-bar__logo-tor{
+    width: 5%;
+    float: left;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top: 13px;
+}
