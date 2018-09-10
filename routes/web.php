@@ -18,3 +18,5 @@ Route::get('/home', 'homepage@getView');
 Route::get('/search','search@searchResult');
 
 Route::get('/tor_alert','tor@getView');
+
+Route::get('/content','content@searchResult');

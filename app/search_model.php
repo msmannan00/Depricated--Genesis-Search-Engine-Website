@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
+use Session;
+
 
 class search_model extends Model
 {
@@ -83,6 +85,15 @@ class search_model extends Model
             $page_number += 1;
         }
         return $page_number;
+    }
+
+    public function getNetworkType()
+    {
+        if (!empty($_GET[config('constant.search_network_type_key')])) {
+            Session::put(config('constant.search_network_type_key'), $_GET[config('constant.search_network_type_key')]);
+        }
+
+        return Session::get(config('constant.search_network_type_key'));
     }
 
 }

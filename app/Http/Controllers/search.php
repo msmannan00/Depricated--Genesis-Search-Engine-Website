@@ -27,6 +27,7 @@ class search extends Controller
             ->with(config('constant.search_page_number'), $search_model->getPageNumber())
             ->with(config('constant.search_previous_page'), $search_model->getPreviousPage())
             ->with(config('constant.search_next_page'), $search_model->getNextPage())
+            ->with(config('constant.search_network_type'), $search_model->getNetworkType())
             ->with(config('constant.search_nav_key'), $this->getNavBarIndex($totalRows))
             ->with(config('constant.search_result_count_key'), $totalRows);
     }

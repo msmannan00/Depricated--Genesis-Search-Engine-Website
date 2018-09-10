@@ -12,6 +12,8 @@ return [
     'search_name_key' => 'q',
     'search_previous_page' => 'previous_page',
     'search_next_page' => 'next_page',
+    'search_network_type' => 'network_type',
+    'search_network_type_key' => 'ntype',
 
     /*SEARCH URL MODEL*/
     'web_id_key' => 'ID',

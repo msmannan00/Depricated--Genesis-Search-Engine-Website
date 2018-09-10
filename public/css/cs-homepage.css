@@ -2,6 +2,7 @@
 .top-bar{
 	color:#000000;
 	text-align: right;
+    margin-top: -10px;
 }
 
 .top-bar__catagory{

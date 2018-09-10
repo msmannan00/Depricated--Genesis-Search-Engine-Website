@@ -18,14 +18,25 @@
         <img src="images/logo.png" class="top-bar__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'" />
         <form class="top-bar__search-form" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!=''">
             <input autocomplete="off" type="search" class="form-control top-bar__search-box" name="q" value="{{$query}}">
-            <p class="top-bar__catagories-container">
-                <span class="top-bar__catagories active" id="catagory_all" onMouseDown="search_manager.onCatagorySelected('catagory_all')">All</span>
-                <span class="top-bar__catagories disable-highlight" id="catagory_images" onMouseDown="search_manager.onCatagorySelected('catagory_images')">Images</span>
-                <span class="top-bar__catagories disable-highlight" id="catagory_video" onMouseDown="search_manager.onCatagorySelected('catagory_video')">Videos</span>
-                <span class="top-bar__catagories disable-highlight" id="catagory_book" onMouseDown="search_manager.onCatagorySelected('catagory_book')">Books</span>
-                <span class="top-bar__catagories disable-highlight" id="catagory_finance" onMouseDown="search_manager.onCatagorySelected('catagory_finance')">Finance</span>
-                <span class="top-bar__catagories disable-highlight" id="catagory_news" onMouseDown="search_manager.onCatagorySelected('catagory_news')">News</span>
-            </p>
+            <div class="top-bar__catagories-container">
+                <span class="top-bar__catagories active" id="catagory_all" >All</span>
+                <span class="top-bar__catagories disable-highlight" id="catagory_images" >Images</span>
+                <span class="top-bar__catagories disable-highlight" id="catagory_video" >Videos</span>
+                <span class="top-bar__catagories disable-highlight" id="catagory_book" >Books</span>
+                <span class="top-bar__catagories disable-highlight" id="catagory_finance" >Finance</span>
+                <span class="top-bar__catagories disable-highlight" id="catagory_news" >News</span>
+
+                <div class="drop-down disable-highlight">
+                    <div class="drop-down__button">{{$network_type}}</div>
+                    <div class="drop-down__content">
+                        <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&page=1&ntype=Onion" class="drop-down__item drop-down__top-item">Onion</a>
+                        <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&page=1&ntype=I2P" class="drop-down__item">I2P</a>
+                        <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&page=1&ntype=Freenet" class="drop-down__item">Freenet</a>
+                        <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&page=1&ntype=Global" class="drop-down__bottom-item">Global</a>
+                    </div>
+                </div>
+
+            </div>
 
             <div class="container top-bar__search-icon-container">
                 <img class="top-bar__search-icon disable-highlight" src="images/search.png" alt=""/>
@@ -38,6 +49,7 @@
     </div>
     <div style="clear: left;"></div>
 </div>
+
 
 <!--result-url-->
 <div class="result-url">

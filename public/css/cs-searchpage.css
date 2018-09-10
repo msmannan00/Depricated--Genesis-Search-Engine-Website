@@ -31,7 +31,7 @@
 .top-bar__search-icon{
 	float: right;
 	width: 3.1%;
-	margin-top: -58.5px;
+	margin-top: -84.5px;
 }
 
 .top-bar__search-button{
@@ -42,7 +42,6 @@
     height:42px;
     width:50px;
     margin-top: -70px;
-    padding-right: 20px;
     cursor: pointer;
 }
 
@@ -72,19 +71,21 @@
 .top-bar__catagories-container{
 	margin-top: 26px;
 	margin-left: -3px;
+    width: 900px;
 }
 
 .top-bar__catagories{
 	margin-left: 20px;
-	font-size: 13px;
-	color: #77778C;
+	font-size: 12.5px;
+	color: #777;
 	cursor: pointer;
 	display: block;
 	width: 49px;
 	height: 31px;
 	float: left;
 	text-align: center;
-    user-select: none;    
+    user-select: none;
+    font-family: Arial;
 }
 
 /*search events*/
@@ -148,7 +149,7 @@
 	font-size: 13.5px;
 	margin-left: 165.5px;
 	color:#545454;
-	width: 610px
+	width: 550px;
 }
 
 /*result-url events*/
@@ -262,4 +263,85 @@
     text-decoration: underline;
 }
 
+/*drop-down*/
 
+.drop-down__button {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color:#495057;
+    color: white;
+    padding-bottom: 7px;
+    width: 74px;
+    font-size: 15px;
+    margin-left: -1px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    vert-align: bottom;
+}
+
+.drop-down {
+    position: relative;
+    display: inline-block;
+    margin-left: 160px;
+    width: 79px;
+    height: 27px;
+}
+
+.drop-down__content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-left: -1px;
+    font-size: 14px;
+
+}
+
+.drop-down__content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    outline: 0;
+    padding-bottom: 7px;
+}
+
+.drop-down__item
+{
+    border-bottom: 0.5px solid #f2f2f2;
+}
+
+/*drop-down events*/
+.drop-down__content a:hover
+{
+    background-color: #005cbf;
+    color: white;
+}
+
+.drop-down:hover .drop-down__content
+{
+    display: block;
+    height: 135px;
+}
+
+.drop-down:hover .drop-down__button
+{
+    background-color: #005cbf;
+}
+
+.drop-down__top-item:hover
+{
+    border-top-right-radius: 4px;
+}
+
+.drop-down__bottom-item:hover
+{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
