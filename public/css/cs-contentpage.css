@@ -1,5 +1,10 @@
+.main-container {
+    display: inline-block;
+}
+
 .content-container {
-    width: 95%;display: block;
+    width: 95%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -12,12 +17,15 @@
     margin-top: 20px;
 
     background-color: whitesmoke;
-    border-radius: 3px;
+    border-radius: 5px;
+    border-bottom: 5px solid #ffcccc;
 }
 
 .content:hover{
     box-shadow : 0px 4px 8px -1.5px #cccccc;
     cursor: pointer;
+
+    border-bottom: 6px solid red;
 }
 
 .content__header{
@@ -27,7 +35,7 @@
     font-family: arial,sans-serif;
     line-height: 1.2;
     white-space: nowrap;
-    margin-top: 138px;
+    margin-top: 8px;
     margin-left: 8px;
 }
 
@@ -38,4 +46,5 @@
     line-height: 16px;
     color:#006621;
     margin-left: 8px;
+    margin-top: 8px;
 }

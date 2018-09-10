@@ -6,7 +6,7 @@
     -khtml-user-select: none;   
     -moz-user-select: none;     
     -ms-user-select: none;
-
+    outline:none;
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */

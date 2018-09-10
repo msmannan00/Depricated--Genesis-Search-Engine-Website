@@ -96,4 +96,23 @@ class search_model extends Model
         return Session::get(config('constant.search_network_type_key'));
     }
 
+    public function getSearchType()
+    {
+
+        if (!empty($_GET[config('constant.search_type_key')])) {
+
+            $data['all'] = '';
+            $data['images'] = '';
+            $data['videos'] = '';
+            $data['books'] = '';
+            $data['finance'] = '';
+            $data['news'] = '';
+
+            $data[$_GET[config('constant.search_type_key')]] = 'active';
+            return $data;
+        }
+
+        return "";
+    }
+
 }

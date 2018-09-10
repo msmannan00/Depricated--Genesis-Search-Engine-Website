@@ -14,6 +14,7 @@ return [
     'search_next_page' => 'next_page',
     'search_network_type' => 'network_type',
     'search_network_type_key' => 'ntype',
+    'search_type_key' => 'stype',
 
     /*SEARCH URL MODEL*/
     'web_id_key' => 'ID',
