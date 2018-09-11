@@ -8,12 +8,12 @@ class content extends Controller
 {
     public function getView()
     {
-        return view('contentpage.contentpage');
+        return view('dlinks.dlinks');
     }
 
     public function searchResult(Request $request)
     {
-        return view('contentpage.contentpage');
+        return view('dlinks.dlinks');
     }
 
     //FUNCTION TO CALCULATE NAVIGATION INITIAL INDEX SO THAT WE CAN SHOW PREVOUS 2 INDEX IF CURRENT INDEX IS IN MIDDLE

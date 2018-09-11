@@ -8,8 +8,8 @@
     padding-top: 4px;
     padding-bottom: -2px;
     border-bottom-color:#efefef;
-    border-style: solid;border-right-width: 0px;
-    border-left-width: 0px;border-top-width: 0px;
+    border-style: solid;border-right-width: 0;
+    border-left-width: 0;border-top-width: 0;
     border-bottom-width: 1px;
 }
 
@@ -39,14 +39,14 @@
     margin-top: 101px;
 }
 
-/*result-url style*/
-.url-description
+/*result style*/
+.result__tor--link
 {
     font-size: 15px;
     font-weight: bold;
 }
 
-.result-url{
+.result{
     border-radius: 8px;
     align-self: center;
     box-shadow : 0px 4px 8px -1px #cccccc;
@@ -63,7 +63,7 @@
     margin-top: 30px;
 }
 
-.result-url__header{
+.result__header{
     font-size: 18px;
     color:#1a0dab;
     cursor: pointer;
@@ -73,11 +73,11 @@
     overflow: hidden;
 }
 
-.result-url__header-spacing-top{
+.result__header--spacing-top{
     margin-top: 32px;
 }
 
-.result-url__link{
+.result__link{
     margin-top: 0px;
     font-size: 14px;
     font-family: arial,sans-serif;
@@ -85,7 +85,7 @@
     color:#006621
 }
 
-.result-url__description{
+.result__description{
     font-family: arial,sans-serif;
     margin-top: -17px;
     font-size: 13.5px;
@@ -95,20 +95,20 @@
     text-justify: inter-word;
 }
 
-.result-url__description-header
+.result__header
 {
     margin-top: 5px;
     font-weight: bold;
     font-size: 12px;
 }
 
-.result-url__description-header-margin-bottom
+.result__header--margin-bottom
 {
     margin-bottom: 30px;
 }
 
-/*result-url events*/
-.result-url__header:hover{
+/*result events*/
+.result__header:hover{
     text-decoration: underline;
 }
 
@@ -120,7 +120,7 @@
     width: 100%
 }
 
-.footer-bar__footer-content{
+.footer-bar__content{
     background-color:#f2f2f2;
     height: 42px;
     border-bottom-color:#efefef;
@@ -130,7 +130,7 @@
     border-color:#e3e3e3;
 }
 
-.footer-bar__footer-text-top{
+.footer-bar__text-top{
     color:#767676;
     font-size: 15px;
     margin-left: 30px;
@@ -138,7 +138,7 @@
     text-align: left;
 }
 
-.footer-bar__footer-text-bottom{
+.footer-bar__text-bottom{
     color:#767676;
     font-size: 13px;
     margin-left: 30px;
@@ -146,13 +146,15 @@
     text-align: left;
 }
 
-.footer-bar__bottom-spacing{
+.footer-bar__catagories--bottom-spacing{
     margin-left: 23px
 }
 
 .footer-bar__catagories{
     cursor: pointer;
 }
+
+/*footer-bar events*/
 
 .footer-bar__catagories:hover{
     text-decoration: underline;

@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 use Session;
+use constant;
+use keys;
 
 
 class search_model extends Model
@@ -13,30 +15,31 @@ class search_model extends Model
     /*GET WEBSITES BASED ON SEARCHED QUERY AND PAGINATION*/
     public function getSearchResult()
     {
-        $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
-        $paginationLimit = config('constant.search_pagination_limit');
-        $paginationOffset = $_GET[config('constant.search_page_number_Key')] - 1;
-        $result = DB::select('SELECT * FROM webpages WHERE ID != 2 LIMIT '.$paginationLimit.' OFFSET '.$paginationOffset*$paginationLimit);
-
         $data = array();
+        $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
+        $paginationOffset = $_GET[keys::$page_number] - 1;
+        $result = DB::select('SELECT * FROM webpages WHERE ID != 2 LIMIT '.constant::$pagination_limit.' OFFSET '.$paginationOffset*constant::$pagination_limit);
+
         foreach($result as $row)
         {
             if(strpos($is_tor_browser, 'tor') == false)
             {
-                $data_row[config('constant.web_redirection_key')] = "tor_alert?url=".$row->URL."&title=".$row->TITLE."&description=".str_replace("&","",$row->DESCRIPTION)
-                ."&type=".$row->TYPE."&live_date=".$row->LIVE_DATE."&update_date=".$row->UPDATE_DATE;
+                $data_row[keys::$redirection] = "tor_alert?url=".$row->URL."&title=".$row->TITLE
+                    ."&desc=".str_replace("&","",$row->DESCRIPTION)
+                    ."&s_type=".$row->TYPE."&live_date=".$row->LIVE_DATE."&update_date=".$row->UPDATE_DATE;
             }
             else
             {
-                $data_row[config('constant.web_redirection_key')] = $row->URL;
+                $data_row[keys::$redirection] = $row->URL;
             }
-            $data_row[config('constant.web_url_key')] = $row->URL;
-            $data_row[config('constant.web_id_key')] = $row->ID;
-            $data_row[config('constant.web_title_key')] = $row->TITLE;
-            $data_row[config('constant.web_description_key')] = $row->DESCRIPTION;
-            $data_row[config('constant.web_type_key')] = $row->TYPE;
-            $data_row[config('constant.web_live_date_key')] = $row->LIVE_DATE;
-            $data_row[config('constant.web_update_date_key')] = $row->UPDATE_DATE;
+
+            $data_row[keys::$url] = $row->URL;
+            $data_row[keys::$id] = $row->ID;
+            $data_row[keys::$title] = $row->TITLE;
+            $data_row[keys::$description] = $row->DESCRIPTION;
+            $data_row[keys::$type] = $row->TYPE;
+            $data_row[keys::$live_date] = $row->LIVE_DATE;
+            $data_row[keys::$update_date] = $row->UPDATE_DATE;
             array_push($data,$data_row);
         }
 
@@ -54,19 +57,19 @@ class search_model extends Model
     /*EXTRACT CURRENT PAGE NUMBER FROM URL*/
     public function getPageNumber()
     {
-        return $_GET[config('constant.search_page_number_Key')]-1;
+        return $_GET[keys::$page_number]-1;
     }
 
 
     /*EXTRACT SEARCHED QUERY FROM URL*/
     public function getSearchedQuery()
     {
-        return $_GET[config('constant.search_name_key')];
+        return $_GET[keys::$name];
     }
 
     public function getPreviousPage()
     {
-        $page_number = $_GET[config('constant.search_page_number_Key')];
+        $page_number = $_GET[keys::$page_number];
         if($page_number > 1)
         {
             $page_number -= 1;
@@ -76,9 +79,8 @@ class search_model extends Model
 
     public function getNextPage()
     {
-        $page_number = $_GET[config('constant.search_page_number_Key')];
-        $pagination_limit = config('constant.search_pagination_limit');
-        $max_nav = ceil(floatval($this->total_rows)/$pagination_limit);
+        $page_number = $_GET[keys::$page_number];
+        $max_nav = ceil(floatval($this->total_rows)/constant::$pagination_limit);
 
         if($page_number < $max_nav)
         {
@@ -89,30 +91,60 @@ class search_model extends Model
 
     public function getNetworkType()
     {
-        if (!empty($_GET[config('constant.search_network_type_key')])) {
-            Session::put(config('constant.search_network_type_key'), $_GET[config('constant.search_network_type_key')]);
+        if (!empty($_GET[keys::$network_type])) {
+            Session::put(keys::$network_type, $_GET[keys::$network_type]);
         }
+        else
+        {
+            Session::put(keys::$network_type, 'onion');
+        }
+        return Session::get(keys::$network_type);
+    }
 
-        return Session::get(config('constant.search_network_type_key'));
+    public function getSearchTypeSelected()
+    {
+        if (!empty($_GET[keys::$type]))
+        {
+            return $_GET[keys::$type];
+        }
+        else
+        {
+            return 'all';
+        }
+    }
+
+    public function getContentType()
+    {
+        if (!empty($_GET[keys::$type])) {
+            $link_type = $_GET[keys::$type];
+            if($link_type!='all'&&$link_type!='finance'&&$link_type!='news')
+            {
+                return 'searchpage.dlinks.dlinks';
+            }
+            else
+            {
+                return 'searchpage.webpages.webpages';
+            }
+        }
     }
 
     public function getSearchType()
     {
+        $data['all'] = '';
+        $data['images'] = '';
+        $data['videos'] = '';
+        $data['books'] = '';
+        $data['finance'] = '';
+        $data['news'] = '';
 
-        if (!empty($_GET[config('constant.search_type_key')])) {
-
-            $data['all'] = '';
-            $data['images'] = '';
-            $data['videos'] = '';
-            $data['books'] = '';
-            $data['finance'] = '';
-            $data['news'] = '';
-
-            $data[$_GET[config('constant.search_type_key')]] = 'active';
-            return $data;
+        if (!empty($_GET[keys::$type])) {
+            $data[$_GET[keys::$type]] = 'active';
         }
-
-        return "";
+        else
+        {
+            $data['all'] = 'active';
+        }
+        return $data;
     }
 
 }
