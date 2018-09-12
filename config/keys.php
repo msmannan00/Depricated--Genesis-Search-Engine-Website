@@ -24,4 +24,11 @@ class keys
     public static $redirection= 'WEB_REDIRECTION';
     public static $content_type= 'content_type';
 
+    /*dlink_data*/
+    public static $dlink= 'dlink';
+    public static $dlink_title= 'TITLE';
+    public static $dlink_url= 'URL';
+    public static $dlink_type = 'TYPE';
+
+
 }

@@ -23,10 +23,10 @@
 
     <div class="result__header--spacing-top"><a class="result__header disable-highlight">{{$title}}</a></div>
     <p class="result__link disable-highlight">{{$url}}</p>
-    <p class="result__header disable-highlight">HOMEPAGE: <span style="margin-left: 3px;font-weight: normal">{{$url}}</span></p>
-    <p class="result__header disable-highlight">LIVE: <span style="margin-left: 3px;font-weight: normal">{{$live_date}}</span></p>
-    <p class="result__header disable-highlight">TYPE: <span style="margin-left: 3px;font-weight: normal">{{$s_type}}</span></p>
-    <p class="result__header result__header--margin-bottom disable-highlight">UPDATE: <span style="margin-left: 3px;font-weight: normal">{{$update_date}}</span></p>
+    <p class="result__info disable-highlight">HOMEPAGE: <span style="margin-left: 3px;font-weight: normal">{{$url}}</span></p>
+    <p class="result__info disable-highlight">LIVE: <span style="margin-left: 3px;font-weight: normal">{{$live_date}}</span></p>
+    <p class="result__info disable-highlight">TYPE: <span style="margin-left: 3px;font-weight: normal">{{$s_type}}</span></p>
+    <p class="result__info result__info--margin-bottom disable-highlight">UPDATE: <span style="margin-left: 3px;font-weight: normal">{{$update_date}}</span></p>
     <p class="result__description disable-highlight">{{$desc}} ....</p>
 </div>
 

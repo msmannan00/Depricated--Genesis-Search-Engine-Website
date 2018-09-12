@@ -20,12 +20,16 @@
 </div>
 
 <!--pagination-->
-<form class="pagination_view disable-highlight">
-<input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&page={{ $previous_page }}&s_type={{$s_type_selected}}'" class="pagination__navigation pagination__margin-left" id="previous" value="Previous">
-<div class="pagination_pages">
-    @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
-        <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ $counter+1 }}" class=" @if($counter == $p_num) active @endif" >{{ $counter+1 }}</a>
-    @endfor
-</div>
-<input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&page={{ $next_page }}'" class="pagination__navigation pagination__margin-right" id="next" value="Next">
-</form>
+    <form class="pagination_view disable-highlight">
+        <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&page={{ $previous_page }}&s_type={{$s_type_selected}}'" class="pagination__navigation pagination__margin-left" id="previous" value="Previous">
+        <div class="pagination_pages">
+            @if ($nav_index>=0)
+                @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
+                    <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ $counter+1 }}" class=" @if($counter == $p_num) active @endif" >{{ $counter+1 }}</a>
+                @endfor
+            @else
+                    <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ 1 }}" class="active" >1</a>
+            @endif
+        </div>
+        <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&page={{ $next_page }}'" class="pagination__navigation pagination__margin-right" id="next" value="Next">
+    </form>

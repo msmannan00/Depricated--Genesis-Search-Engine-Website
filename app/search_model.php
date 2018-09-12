@@ -15,10 +15,11 @@ class search_model extends Model
     /*GET WEBSITES BASED ON SEARCHED QUERY AND PAGINATION*/
     public function getSearchResult()
     {
+        $search_type = $_GET[keys::$type];
         $data = array();
         $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
         $paginationOffset = $_GET[keys::$page_number] - 1;
-        $result = DB::select('SELECT * FROM webpages WHERE ID != 2 LIMIT '.constant::$pagination_limit.' OFFSET '.$paginationOffset*constant::$pagination_limit);
+        $result = DB::select("SELECT * FROM webpages WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit);
 
         foreach($result as $row)
         {
@@ -46,10 +47,37 @@ class search_model extends Model
         return $data;
     }
 
+    public function getDLinkResult()
+    {
+        $search_type = $_GET[keys::$type];
+        $data_dlink = array();
+        $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
+        $paginationOffset = $_GET[keys::$page_number] - 1;
+
+        $query = "SELECT * FROM dlinks WHERE TYPE= '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'";
+        $result = DB::select($query);
+
+        foreach($result as $row)
+        {
+            $data_row[keys::$dlink_url] = $row->URL;
+            if(strlen($row->TITLE)>20){
+                $data_row[keys::$dlink_title] = substr($row->TITLE,0,20)."...";
+            }
+            else{
+                $data_row[keys::$dlink_title] = $row->TITLE;
+            }
+            $data_row[keys::$dlink_type] = $row->TYPE;
+            array_push($data_dlink,$data_row);
+        }
+
+        return $data_dlink;
+    }
+
     /*GET LIST OF ALL WEBSITES DESPITE PAGINATION*/
     public function getTotalRows()
     {
-        $result = DB::select('SELECT count(*) as count FROM webpages');
+        $search_type = $_GET[keys::$type];
+        $result = DB::select("SELECT count(*) as count FROM webpages WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'");
         $this->total_rows = $result[0]->count;
         return $result[0]->count;
     }
@@ -94,7 +122,7 @@ class search_model extends Model
         if (!empty($_GET[keys::$network_type])) {
             Session::put(keys::$network_type, $_GET[keys::$network_type]);
         }
-        else
+        else if(empty(Session::get(keys::$network_type)))
         {
             Session::put(keys::$network_type, 'onion');
         }
@@ -131,9 +159,9 @@ class search_model extends Model
     public function getSearchType()
     {
         $data['all'] = '';
-        $data['images'] = '';
-        $data['videos'] = '';
-        $data['books'] = '';
+        $data['image'] = '';
+        $data['video'] = '';
+        $data['doc'] = '';
         $data['finance'] = '';
         $data['news'] = '';
 

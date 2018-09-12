@@ -82,14 +82,9 @@
     box-shadow : 0px 4px 8px -1.5px #cccccc;
 }
 
-.search__search-box:focus{
-    box-shadow : 0px 4px 12px -1.5px #cccccc;
-}
-
 .search__search-button:hover{
 	color : #000000;
-    backgroundColor : #F2F2F2;	
-    background: linear-gradient(#f7f7f7,#f1f1f1);	
+    background: linear-gradient(#f7f7f7,#f1f1f1);
 	border-style: solid;
 	border-width: 0.8px;
 	border-color:#C4C4C4;

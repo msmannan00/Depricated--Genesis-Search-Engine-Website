@@ -17,6 +17,7 @@ class search extends Controller
     public function searchResult(Request $request)
     {
         $search_model = new search_model;
+        $search_model->getNetworkType();
         $totalRows = $search_model->getTotalRows();
 
         return view('searchpage.search')
@@ -29,6 +30,7 @@ class search extends Controller
             ->with(keys::$type, $search_model->getSearchType())
             ->with(keys::$type_selected, $search_model->getSearchTypeSelected())
             ->with(keys::$content_type, $search_model->getContentType())
+            ->with(keys::$dlink, $search_model->getDLinkResult())
             ->with(keys::$nav, $this->getNavBarIndex($totalRows))
             ->with(keys::$result_count, $totalRows);
     }

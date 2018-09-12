@@ -60,7 +60,6 @@
     padding-left: 15px;
     padding-bottom: 1px;
     padding-top: 15px;
-    margin-top: 30px;
 }
 
 .result__header{
@@ -95,20 +94,21 @@
     text-justify: inter-word;
 }
 
-.result__header
+.result__info
 {
     margin-top: 5px;
     font-weight: bold;
+    color:#000000;
     font-size: 12px;
 }
 
-.result__header--margin-bottom
+.result__info--margin-bottom
 {
     margin-bottom: 30px;
 }
 
 /*result events*/
-.result__header:hover{
+.result__info:hover{
     text-decoration: underline;
 }
 
