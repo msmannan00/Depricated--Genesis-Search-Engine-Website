@@ -32,6 +32,7 @@ class search extends Controller
             ->with(keys::$content_type, $search_model->getContentType())
             ->with(keys::$dlink, $search_model->getDLinkResult())
             ->with(keys::$nav, $this->getNavBarIndex($totalRows))
+            ->with(keys::$dlink_icon, $search_model->getdlinkIcon())
             ->with(keys::$result_count, $totalRows);
     }
 

@@ -26,6 +26,7 @@ class keys
 
     /*dlink_data*/
     public static $dlink= 'dlink';
+    public static $dlink_icon= 'dlink_icon';
     public static $dlink_title= 'TITLE';
     public static $dlink_url= 'URL';
     public static $dlink_type = 'TYPE';

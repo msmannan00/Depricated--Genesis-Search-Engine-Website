@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use Session;
 use constant;
+use db_constants;
 use keys;
 
 
@@ -54,19 +55,20 @@ class search_model extends Model
         $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
         $paginationOffset = $_GET[keys::$page_number] - 1;
 
-        $query = "SELECT * FROM dlinks WHERE TYPE= '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'";
+        $query = "SELECT * FROM dlinks WHERE S_TYPE= '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'";
         $result = DB::select($query);
 
         foreach($result as $row)
         {
             $data_row[keys::$dlink_url] = $row->URL;
-            if(strlen($row->TITLE)>20){
-                $data_row[keys::$dlink_title] = substr($row->TITLE,0,20)."...";
+            $title_length = strlen($row->TITLE);
+            if($title_length>20){
+                $data_row[keys::$dlink_title] = substr($row->TITLE,$title_length-20,$title_length);
             }
             else{
                 $data_row[keys::$dlink_title] = $row->TITLE;
             }
-            $data_row[keys::$dlink_type] = $row->TYPE;
+            $data_row[keys::$dlink_type] = $row->S_TYPE;
             array_push($data_dlink,$data_row);
         }
 
@@ -76,8 +78,21 @@ class search_model extends Model
     /*GET LIST OF ALL WEBSITES DESPITE PAGINATION*/
     public function getTotalRows()
     {
+        $query_table = '';
+        if (!empty($_GET[keys::$type])) {
+            $link_type = $_GET[keys::$type];
+            if($link_type!='all'&&$link_type!='finance'&&$link_type!='news')
+            {
+                $query_table = db_constants::$dlinks_tname;
+            }
+            else
+            {
+                $query_table = db_constants::$webpages_tname;
+            }
+        }
+
         $search_type = $_GET[keys::$type];
-        $result = DB::select("SELECT count(*) as count FROM webpages WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'");
+        $result = DB::select("SELECT count(*) as count FROM ".$query_table." WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'");
         $this->total_rows = $result[0]->count;
         return $result[0]->count;
     }
@@ -153,6 +168,19 @@ class search_model extends Model
             {
                 return 'searchpage.webpages.webpages';
             }
+        }
+    }
+
+    public function getdlinkIcon()
+    {
+        $search_type = $_GET[keys::$type];
+        if($search_type=='image')
+        {
+            return constant::$image_icon;
+        }
+        else
+        {
+            return constant::$doc_icon;
         }
     }
 
