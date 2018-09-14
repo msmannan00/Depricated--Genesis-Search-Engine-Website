@@ -69,14 +69,14 @@
         <p class="result__status">About {{$result_count}} results found</p>
     @endif
 @else
-    <div style="margin-top: 90px;margin-left: 170px;">
-        <p style="float: left;"> Your search - <br><div style="float: left;font-size: 16px;max-width: 30%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin-right: 5px"> <strong>{{$query}}</strong></div> did not match any documents in <strong>{{$n_type}}</strong> network</p>
-        <p style="font-size: 16px;margin-top: -10px;float: left">Suggestions:</p>
-        <ul style="clear: left;margin-left: -1.35em">
-            <li style="font-size: 14.5px;margin-top: -2px">Try changing current network type</li>
-            <li style="font-size: 14.5px;margin-top: -2px">Make sure that all words are spelled correctly.</li>
-            <li style="font-size: 14.5px;margin-top: -2px">Try different keywords.</li>
-            <li style="font-size: 14.5px;margin-top: -2px">Try more general keywords.</li>
+    <div class="result-not-found">
+        <p class="result-not-found__message-header"> Your search - <br><div class="result-not-found__message-header--query"> <strong>{{$query}}</strong></div> did not match any documents in <strong>{{$n_type}}</strong> network</p>
+        <p class="result-not-found__suggestion-text">Suggestions:</p>
+        <ul class="result-not-found__suggestion-container">
+            <li class="result-not-found__suggestion-item">Try changing current network type</li>
+            <li class="result-not-found__suggestion-item">Make sure that all words are spelled correctly.</li>
+            <li class="result-not-found__suggestion-item">Try different keywords.</li>
+            <li class="result-not-found__suggestion-item">Try more general keywords.</li>
         </ul>
     </div>
 @endif
