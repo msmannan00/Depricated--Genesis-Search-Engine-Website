@@ -13,12 +13,15 @@
 <div class="top-bar">
     <div class="top-bar__sub-container">
         <img src="{{constant::$logo}}" class="top-bar__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'" />
-        <form class="top-bar__search-form" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!={{constant::$emptyString}}">
+        <form class="top-bar__search-form"  method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!={{constant::$emptyString}}">
 
             <!--search box-->
-            <div class="form-control top-bar__search-box">
+            <div style="display: flex">
+            </div>
+            <div class="form-control top-bar__search-box" >
                 <input autocomplete="off" type="search" class="top-bar__search-input" name="q" value="{{$query}}">
             </div>
+
             <div class="top-bar__catagories-container">
 
                 <!--change search type like image video audio-->

@@ -30,6 +30,7 @@ class keys
     public static $dlink_title= 'TITLE';
     public static $dlink_url= 'URL';
     public static $dlink_type = 'TYPE';
+    public static $dlink_extension = 'extension';
 
 
 }

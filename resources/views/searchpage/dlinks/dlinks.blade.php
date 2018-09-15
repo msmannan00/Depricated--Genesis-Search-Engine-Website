@@ -12,11 +12,13 @@
                         @php
                             $searchQueryTitle = $rows[keys::$dlink_title];
                             $searchQueryUrl = $rows[keys::$dlink_url];
+                            $searchExtension = $rows[keys::$dlink_extension];
                         @endphp
 
                         <a href="{{$searchQueryUrl}}">
-                            <div class="content-container">
+                            <div class="content-container disable-highlight">
                                 <div class="content__header"><div class="disable-highlight">{{$searchQueryTitle}}</div></div>
+                                <p class="content__extension">{{$searchExtension}}</p>
                                 <img src="{{$dlink_icon}}" class="content__image__icon"/>
                                 <!--<p class="content__link disable-highlight">{{$searchQueryUrl}} </p>-->
                             </div>

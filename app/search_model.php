@@ -62,13 +62,16 @@ class search_model extends Model
         {
             $data_row[keys::$dlink_url] = $row->URL;
             $title_length = strlen($row->TITLE);
+            $title_wrapped = '';
             if($title_length>20){
-                $data_row[keys::$dlink_title] = substr($row->TITLE,$title_length-20,$title_length);
+                $title_wrapped = substr($row->TITLE,$title_length-20,$title_length);
             }
             else{
-                $data_row[keys::$dlink_title] = $row->TITLE;
+                $title_wrapped = substr($row->TITLE,0,$title_length-4);
             }
+            $data_row[keys::$dlink_title] =substr($title_wrapped,0,strlen($title_wrapped)-4);
             $data_row[keys::$dlink_type] = $row->S_TYPE;
+            $data_row[keys::$dlink_extension] = substr($row->TITLE,$title_length-3,$title_length);
             array_push($data_dlink,$data_row);
         }
 
@@ -177,6 +180,10 @@ class search_model extends Model
         if($search_type=='image')
         {
             return constant::$image_icon;
+        }
+        else if($search_type=='video')
+        {
+            return constant::$video_icon;
         }
         else
         {

@@ -64,11 +64,16 @@
 }
 .top-bar__search-input{
     align-self: center;
-    width:93.5%;
+    width:90%;
     height: 100%;
     font-size: 16px;
     color: black;
     border:0px;
+}
+
+top-bar__search-input:focus{
+    border:0px solid;
+    outline: none;
 }
 
 .top-bar__catagories-container{
@@ -352,7 +357,7 @@
 {
     display: block;
     height: 135px;
-    opacity:0.9;
+    opacity:0.98;
 }
 
 .drop-down:hover .drop-down__button
