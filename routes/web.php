@@ -20,3 +20,5 @@ Route::get('/search','search@searchResult');
 Route::get('/tor_alert','tor@getView');
 
 Route::get('/content','content@searchResult');
+
+Route::get('/add_website','add_website@getView');

@@ -33,16 +33,6 @@
                 <span id="catagory_news" ><a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&s_type=news" class="{{$s_type['news']}} top-bar__catagories disable-highlight">News</a></span>
 
                 <!--dropdown menu to change relay network-->
-                <div class="drop-down disable-highlight">
-                    <div class="drop-down__button">{{$n_type}}</div>
-                    <div class="drop-down__content">
-                        <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=onion&s_type={{$s_type_selected}}" class="drop-down__item drop-down__top-item">Onion</a>
-                        <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=i2p&s_type={{$s_type_selected}}" class="drop-down__item">I2P</a>
-                        <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=freenet&s_type={{$s_type_selected}}" class="drop-down__item">Freenet</a>
-                        <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=global&s_type={{$s_type_selected}}" class="drop-down__bottom-item">Global</a>
-                    </div>
-                </div>
-
             </div>
 
             <!--search icon in search bar-->
@@ -54,8 +44,37 @@
             </div>
             <input autocomplete="off" type="hidden" name="p_num" value="1">
             <input autocomplete="off" type="hidden" name="s_type" value="{{$s_type_selected}}">
+
         </form>
+
+        <div class="drop-down disable-highlight">
+            <div class="drop-down__button">{{$n_type}} Network</div>
+            <div class="drop-down__content">
+                <form method="GET" action="search" enctype="multipart/form-data" onsubmit="return web.value!={{constant::$emptyString}}">
+                    <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=onion&s_type={{$s_type_selected}}" class="drop-down__item drop-down__top-item"><span style="margin-left: 10px">Onion Network</span></a>
+                    <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=i2p&s_type={{$s_type_selected}}" class="drop-down__item"><span style="margin-left: 10px">I2P Network</span></a>
+                    <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=freenet&s_type={{$s_type_selected}}" class="drop-down__item"><span style="margin-left: 10px">Freenet Network</span></a>
+                    <a href="{{constant::$search_base_url }}&q={{$query}}&p_num=1&n_type=global&s_type={{$s_type_selected}}" class="drop-down__item"><span style="margin-left: 10px">Global Network</span></a>
+                    <input autocomplete="off" type="hidden" name="p_num" value="1">
+                    <input autocomplete="off" type="hidden" name="s_type" value="{{$s_type_selected}}">
+                </form>
+            </div>
+        </div>
+
+        <div class="drop-down disable-highlight" style="margin-left: 60px">
+            <div class="drop-down__button">Add website</div>
+            <div class="drop-down__content" style="width: 280px;height: 140px;margin-left: 10px">
+                <p style="margin-left: 10px;margin-top: 10px">Enter your website address</p>
+                <form method="GET" action="add_website" enctype="multipart/form-data" onsubmit="return url.value!={{constant::$emptyString}}">
+                    <input autocomplete="off" type="search" name="url" value="" style="width: 260px;border-radius: 4px;outline: none;margin-top: -5px;margin-left: 10px" class="form-control">
+                    <input autocomplete="off" type="submit" value="SUBMIT" class="btn btn-primary" style="width: 43%;border-radius: 4px;outline: none;margin-top: 10px;margin-left: 10px">
+                </form>
+            </div>
+        </div>
+
     </div>
+
+
 
     <!--warning bar-->
     <div style="clear: left;"></div>
