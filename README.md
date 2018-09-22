@@ -20,3 +20,5 @@ Whether it is operational security leaks or software misconfiguration - most oft
   <li>Support various dbms data importing</li>
   <li>Indexing schduling</li>
   <li>Full indexing, increment indexing</li>
+<h1>License</h1>
+The license is Apache License Version 2.0.It's free and you can use it however you want it wharever way.For more information, see http://www.apache.org/licenses/LICENSE-2.0.txt
