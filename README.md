@@ -9,4 +9,14 @@ Whether it is operational security leaks or software misconfiguration - most oft
   <li>We want to help operators of hidden services find and fix operational security issues with their services. We want to help them detect misconfigurations and we want to inspire a new generation of anonymity engineering projects to help make the world a more private place.</li><br>
   <li>Secondly we want to help researchers and investigators monitor and track Dark Web sites. In fact we want to make this as easy as possible. Not because we agree with the goals and motives of every investigation force out there - most often we don't. But by making these kinds of investigations easy, we hope to create a powerful incentive for new anonymity technology (see goal #1)</li>
 </ul>
-
+<h1>Feature List</h1>
+  <li>Boolean search, natual languae search</li>
+  <li>Support synonym, stopword</li>
+  <li>Search result summary, and highlight.</li>
+  <li>Multiple filed searching</li>
+  <li>Multiple field sorting</li>
+  <li>Multiple field filtering</li>
+  <li>Multiple field grouping</li>
+  <li>Support various dbms data importing</li>
+  <li>Indexing schduling</li>
+  <li>Full indexing, increment indexing</li>
