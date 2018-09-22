@@ -7,7 +7,7 @@ Whether it is operational security leaks or software misconfiguration - most oft
 <ul>
   <li>Boogle Search has two primary goals</li><br>
   <li>We want to help operators of hidden services find and fix operational security issues with their services. We want to help them detect misconfigurations and we want to inspire a new generation of anonymity engineering projects to help make the world a more private place.</li><br>
-  <li>Secondly we want to help researchers and investigators monitor and track Dark Web sites. In fact we want to make this as easy as possible. Not because we agree with the goals and motives of every investigation force out there - most often we don't. But by making these kinds of investigations easy, we hope to create a powerful incentive for new anonymity technology (see goal #1)</li>
+  <li>Secondly we want to help researchers and investigators monitor and track Dark Web sites. In fact we want to make this as easy as possible. Not because we agree with the goals and motives of every investigation force out there - most often we don't. But by making these kinds of investigations easy, we hope to create a powerful incentive for new anonymity technology (see goal #2)</li>
 </ul>
 <h1>Feature List</h1>
   <li>Boolean search, natual languae search</li>
