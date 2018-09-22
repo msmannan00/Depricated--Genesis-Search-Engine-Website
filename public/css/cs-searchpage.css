@@ -1,6 +1,6 @@
-/*top-bar style*/
-.top-bar{
-	height: 123px;
+/*detail_header style*/
+.sb_detail-header{
+	height: 122px;
 	background-color:#fafafa;
 	margin-top: -24px;
 
@@ -9,61 +9,59 @@
 	border-left-width: 0px;border-top-width: 1px;
 	border-bottom-width: 1px;
 	border-color:#ebebeb;
-
+    width: 2000px;
+    padding-top: 23px;
+    margin-left: 13.5px;
 }
 
-.top-bar__sub-container{
-	margin-top: 24px;
-	margin-left: 13.5px;
-}
-
-.top-bar__logo{
-	width: 7.50%;
+.sb_detail-header__logo{
+    width: 120px;
 	float: left;
     cursor:pointer;
 }
 
-.top-bar__search-form{
-	width: 40%;
+.sb_detail-header__search-form{
+	width: 23%;
 	float: left
 }
 
-.top-bar__search-icon{
-	float: right;
-	width: 3.1%;
-	margin-top: -58px;
+.sb_detail-header__search-icon{
+	width: 17px;
+    position: absolute;
+    left: 748px;
+    top: 33px;
 }
 
-.top-bar__search-button{
-    float: right;
-    opacity:0;
+.sb_detail-header__search-button{
+    position: absolute;
+    left: 733px;
+    top: 20px;
     height:42px;
     width:50px;
-    margin-left: -295px;
-    margin-top: -70px;
+    opacity: 0;
     cursor: pointer;
 }
 
-.top-bar__search-icon-container{
+.sb_detail-header__search-icon-container{
     margin-left:13.5px;
 }
 
-.top-bar__search-button-container{
+.sb_detail-header__search-button-container{
     margin-left: 26.5px;
 }
 
-.top-bar__search-box{
+.sb_detail-header__search-box{
 	border-radius: 3px;
 	height:46px;
 	box-shadow: 0 1.85px 1.5px -1.5px #999999;
 	border-color: #e7e7e7;
-	width:100%;
+	width:632px;
 	margin:0 auto;
 	display:block;
 	margin-top: -6px;
 	margin-left: 17px;
 }
-.top-bar__search-input{
+.sb_detail-header__search-input{
     align-self: center;
     width:90%;
     height: 100%;
@@ -72,18 +70,18 @@
     border:0px;
 }
 
-top-bar__search-input:focus{
+.sb_detail-header__search-input:focus{
     border:0px solid;
     outline: none;
 }
 
-.top-bar__catagories-container{
+.sb_detail-header__catagories-container{
 	margin-top: 26px;
 	margin-left: -3px;
     width: 900px;
 }
 
-.top-bar__catagories{
+.sb_detail-header__catagories{
 	margin-left: 20px;
 	font-size: 12.5px;
 	color: #777;
@@ -98,15 +96,15 @@ top-bar__search-input:focus{
 }
 
 /*search events*/
-.top-bar__search-box:hover{
+.sb_detail-header__search-box:hover{
     box-shadow : 0px 4px 8px -1.5px #cccccc;
 }
 
-.top-bar__search-box:focus{
+.sb_detail-header__search-box:focus{
     box-shadow : 0px 4px 12px -1.5px #cccccc;
 }
 
-.top-bar__catagories:hover:not(.active){
+.sb_detail-header__catagories:hover:not(.active){
 	color : #000000;
 }
 
@@ -116,34 +114,13 @@ top-bar__search-input:focus{
 	border-bottom : 3px solid #1A73E8;
 }
 
-/*warning-bar style*/
-.warning-bar {
-    border-bottom : 1px solid #efefef;
-    background-color: #ffcc99;
-    font-weight: bold;
-    width: 100%;
-    font-size: 14px;
-    height:29px;
-    padding-top: 2.5px;
-    text-align: center;
-    color: white;
-}
-
-/*result-status style*/
-.result__status{
-	margin-left: 165.5px;
-	margin-top: 12.5px;
-	color: #77778c;
-	font-size: 13px;
-    margin-top: 50px;
-}
-
 /*result-url style*/
-.result{
+/*********************************************** File Divider ****************************************************/
+.wp_result{
     min-height: 36.4vh;
 }
 
-.result__header{
+.wp_result__header{
 	font-size: 18px;
 	margin-left: 165.5px;
 	color:#1a0dab;
@@ -155,11 +132,11 @@ top-bar__search-input:focus{
     word-wrap: break-word
 }
 
-.result__header--spacing-top{
+.wp_result__header--spacing-top{
     margin-top: 22px;
 }
 
-.result__link{
+.wp_result__link{
 	margin-top: 0px;
 	font-size: 14px;
     font-family: arial,sans-serif;
@@ -168,7 +145,7 @@ top-bar__search-input:focus{
 	color:#006621
 }
 
-.result__description{
+.wp_result__description{
     font-family: arial,sans-serif;
     margin-top: -17px;
 	font-size: 13.5px;
@@ -178,16 +155,16 @@ top-bar__search-input:focus{
 }
 
 /*result-url events*/
-.result__header:hover{
+.wp_result__header:hover{
     text-decoration: underline;
 }
 
 /*pagination style*/
-.pagination_view{
+.wp_pagination_view{
 	margin-left: -85px;
 }
 
-.pagination__navigation{
+.wp_pagination__navigation{
 	margin-top: 40px;
 	background-color:#f2f2f2;
 	height: 45px;
@@ -200,19 +177,19 @@ top-bar__search-input:focus{
 
 }
 
-.pagination__margin-left{
+.wp_pagination__margin-left{
 	margin-left: 250px;
 }
 
-.pagination__margin-right{
+.wp_pagination__margin-right{
 	margin-left: -4px;
 }
 
-.pagination_pages {
+.wp_pagination_pages {
     display: inline-block;
 }
 
-.pagination_pages a {
+.wp_pagination_pages a {
     color: black;
     padding: 10px 16px;
     text-decoration: none;
@@ -221,18 +198,18 @@ top-bar__search-input:focus{
 	margin-left: -5px;
 }
 
-.pagination_pages a.active {
+.wp_pagination_pages a.active {
     background-color: #495057;
     color: white;
     border: 1px solid #495057;
 }
 
-.pagination_pages a:hover:not(.active) {
+.wp_pagination_pages a:hover:not(.active) {
 	background-color: #ddd;
 }
 
 /*result-url events*/
-.pagination__navigation:hover{
+.wp_pagination__navigation:hover{
 	color : #000000;
     backgroundColor : #F2F2F2;	
     background: linear-gradient(#f7f7f7,#f1f1f1);	
@@ -243,72 +220,10 @@ top-bar__search-input:focus{
 	cursor: default;
 }
 
-/*footer-bar style*/
+/*header_catagory.blade*/
+/*********************************************** File Divider ****************************************************/
 
-.footer-bar{
-    margin-top: 50px;
-    width: 100%;
-    position: absolute;
-}
-
-.footer-bar__content{
-    background-color:#f2f2f2;
-    height: 42px;
-    border-bottom-color:#efefef;
-    border-style: solid;border-right-width: 0px;
-    border-left-width: 0px;border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-color:#e3e3e3;
-}
-
-.footer-bar__text-top{
-    color:#767676;
-    font-size: 15px;
-    margin-left: 30px;
-    padding-top: 10px;
-    text-align: left;
-}
-
-.footer-bar__text-bottom{
-    color:#767676;
-    font-size: 13px;
-    margin-left: 30px;
-    padding-top: 11px;
-    text-align: left;
-}
-
-.footer-bar__catagories--bottom-spacing{
-    margin-left: 23px
-}
-
-.footer-bar__catagories{
-    cursor: pointer;
-}
-
-/*footer-bar events*/
-
-.footer-bar__catagories:hover{
-    text-decoration: underline;
-}
-
-/*drop-down*/
-.drop-down__add-button{
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    font-size: 14px;
-    color: #777;
-    padding-bottom: 7px;
-    width: 140px;
-    margin-left: 0px;
-    border: none;
-    margin-top: 64px;
-    text-align: center;
-    vert-align: bottom;
-    transition: background-color .15s ease-in-out;
-    text-transform: capitalize
-}
-
-.drop-down__button {
+.hc_drop-down__button {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     font-size: 14px;
@@ -317,34 +232,66 @@ top-bar__search-input:focus{
     width: 105px;
     margin-left: -1px;
     border: none;
-    margin-top: 63px;
     text-align: center;
     vert-align: bottom;
     transition: background-color .15s ease-in-out;
     text-transform: capitalize
 }
 
-.drop-down {
+.hc_drop-down {
+    margin-top: 63px;
     position: relative;
     display: inline-block;
-    margin-left: -90px;
     width: 59px;
+    margin-left: 13px;
 }
 
-.drop-down__content {
+.hc_drop-down--margin-left{
+    margin-left: 22px;
+}
+
+.hc_drop-down__report-header{
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hc_drop-down__report-input{
+    width: 215px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: -5px;
+    margin-left: 5px;
+}
+
+.hc_drop-down__report-button{
+    width: 215px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.hc_drop-down__content {
     display: none;
     position: absolute;
     background-color: #ffffff;
     min-width: 135px;
     box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.4);
     z-index: 1;
-    margin-left: -1px;
+    margin-left: 33px;
     font-size: 14px;
     height: 70px;
     margin-top: -3px;
 }
 
-.drop-down__content a {
+.hc_drop-down__content--size{
+    width: 225px;
+    height: 128px;
+    margin-left: 10px
+}
+
+.hc_drop-down__content a {
     color: black;
     padding: 5px 5px;
     text-decoration: none;
@@ -353,7 +300,7 @@ top-bar__search-input:focus{
     padding-bottom: 7px;
 }
 
-.drop-down__item
+.hc_drop-down__item
 {
     min-width: 135px;
     height: 30px;
@@ -366,54 +313,73 @@ top-bar__search-input:focus{
 }
 
 /*drop-down events*/
-.drop-down__content a:hover
+.hc_drop-down__content a:hover
 {
     background-color: #e6e6e6;
     color: #222222;
 }
 
-.drop-down:hover .drop-down__content
+.hc_drop-down:hover .hc_drop-down__content
 {
     display: block;
     height: 128px;
     opacity:0.98;
 }
 
-.drop-down:hover .drop-down__button
+.hc_drop-down:hover .hc_drop-down__button
 {
     color: #222222;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.drop-down__top-item
+.hc_drop-down__top-item
 {
     margin-top: 4px;
 }
 
-.drop-down__bottom-item
-{
-}
-
-.drop-down__bottom-item:hover
+.hc_drop-down__bottom-item:hover
 {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 37px;
 }
 
-.result-not-found
+/*result_content.blade*/
+/*********************************************** File Divider ****************************************************/
+.rc_warning-bar {
+    border-bottom : 1px solid #efefef;
+    background-color: #ffcc99;
+    font-weight: bold;
+    width: 100%;
+    font-size: 14px;
+    height:29px;
+    padding-top: 2.5px;
+    text-align: center;
+    color: white;
+}
+
+/*result-status style*/
+.rc_result__status{
+    margin-left: 165.5px;
+    color: #77778c;
+    font-size: 13.3px;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.rc_result-not-found
 {
-    margin-top: 90px;
+    margin-top: 55px;
     margin-left: 170px;
 }
 
-.result-not-found__message-header
+.rc_result-not-found__message-header
 {
     float: left;
 }
 
-.result-not-found__message-header--query
+.rc_result-not-found__message-header--query
 {
     float: left;
     font-size: 16px;
@@ -424,20 +390,20 @@ top-bar__search-input:focus{
     margin-right: 5px
 }
 
-.result-not-found__suggestion-text
+.rc_result-not-found__suggestion-text
 {
     font-size: 16px;
     margin-top: -10px;
     float: left
 }
 
-.result-not-found__suggestion-container
+.rc_result-not-found__suggestion-container
 {
     clear: left;
     margin-left: -1.35em;
 }
 
-.result-not-found__suggestion-item
+.rc_result-not-found__suggestion-item
 {
     font-size: 14.5px;
     margin-top: -2px;

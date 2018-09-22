@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\about_model;
+use keys;
 
-class homepage extends Controller
+class about extends Controller
 {
     public function __invoke(Request $request)
     {
@@ -13,7 +15,9 @@ class homepage extends Controller
     /*get view of controller*/
     public function getView()
     {
-        return view('homepage.homepage');
+        $about_model = new about_model;
+        return view('about.about')
+        ->with(keys::$notice, $about_model->getNoticeMessage());
     }
 
 }

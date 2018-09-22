@@ -8,6 +8,8 @@ class keys
     public static $type = 's_type';
     public static $live_date = 'live_date';
     public static $update_date = 'update_date';
+    public static $success= 'success';
+    public static $notice= 'notice';
 
     /*search.blade*/
     public static $query= 'query';
@@ -31,6 +33,9 @@ class keys
     public static $dlink_url= 'URL';
     public static $dlink_type = 'TYPE';
     public static $dlink_extension = 'extension';
+
+    /*reportus.blade*/
+    public static $report= 'rep';
 
 
 }

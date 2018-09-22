@@ -1,9 +1,10 @@
-.main-container {
+.dl_content {
     width: 100%;
     min-height: 36.4vh;
+    display: inline-block;
 }
 
-.content {
+.dl_content__container {
     width: 95%;
     display: block;
     margin-left: auto;
@@ -11,15 +12,15 @@
     margin-top: 40px;
 }
 
-.content-container{
+.dl_content__inner-container{
     width: 190px;
     height:190px;
     margin-left: 20px;
     float: left;
     margin-top: 20px;
-    background: -moz-linear-gradient(#fafafa,ghostwhite);
+    background: -moz-linear-gradient(#fbfbfb,#fbfbfb);
     border-radius: 5px;
-    border-bottom: 5px solid #ffcccc;
+    border-bottom: 1px solid #e6e6e6;
     border-left: 1px solid #e6e6e6;
     border-right: 1px solid #e6e6e6;
     border-top: 1px solid #e6e6e6;
@@ -27,22 +28,21 @@
     transition: box-shadow 0.2s ease-in-out,border-bottom 0.2s ease-in-out;
  }
 
-.content-container:hover{
-    box-shadow : 0px 4px 22px 2px #cccccc;
+.dl_content__inner-container:hover{
+    box-shadow: 0px 4px 11px 0px rgba(179, 179, 179,0.4);
     cursor: pointer;
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid darkgray;
 }
 
-.content__header{
+.dl_content__header{
     width:100%;
     font-size: 15px;
-    color:#1a0dab;
     cursor: pointer;
     font-family: arial,sans-serif;
     line-height: 1.2;
     word-wrap: break-word;
-    background-color: #6c6c6c;
-    color: white;
+    background-color: #f4f4f4;
+    color:#595959;
     padding-top: 7px;
     text-align: center;
     border-top-left-radius: 4px;
@@ -50,7 +50,7 @@
     padding-bottom: 7px;
 }
 
-.content__image__icon{
+.dl_content__image__icon{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -58,7 +58,7 @@
     margin-top: 21px;
 }
 
-.content__link{
+.dl_content__link{
     font-size: 17px;
     font-family: arial,sans-serif;
     line-height: 16px;
@@ -70,8 +70,8 @@
     word-wrap: break-word;
 }
 
-.content__extension{
-    background-color: lightblue;
+.dl_content__extension{
+    background-color: #ccccff;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
     color:white;

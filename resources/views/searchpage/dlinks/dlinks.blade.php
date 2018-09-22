@@ -4,10 +4,9 @@
 <!--local php variables-->
 
 <!--top bar-->
-    <div class="main-container">
+    <div class="dl_content">
         @if ($result_count>0)
-            <div style="display: inline-block;">
-                <div class="content" >
+                <div class="dl_content__container" >
                     @foreach($dlink as $rows)
                         @php
                             $searchQueryTitle = $rows[keys::$dlink_title];
@@ -16,15 +15,14 @@
                         @endphp
 
                         <a href="{{$searchQueryUrl}}">
-                            <div class="content-container disable-highlight">
-                                <div class="content__header"><div class="disable-highlight">{{$searchQueryTitle}}</div></div>
-                                <p class="content__extension">{{$searchExtension}}</p>
-                                <img src="{{$dlink_icon}}" class="content__image__icon"/>
+                            <div class="dl_content__inner-container disable-highlight">
+                                <div class="dl_content__header"><div class="disable-highlight">{{$searchQueryTitle}}</div></div>
+                                <p class="dl_content__extension">{{$searchExtension}}</p>
+                                <img src="{{$dlink_icon}}" class="dl_content__image__icon"/>
                                 <!--<p class="content__link disable-highlight">{{$searchQueryUrl}} </p>-->
                             </div>
                         </a>
                     @endforeach
-                </div>
             </div>
         @endif
     </div>

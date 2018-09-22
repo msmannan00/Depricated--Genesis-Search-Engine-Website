@@ -24,7 +24,7 @@ class search_model extends Model
 
         foreach($result as $row)
         {
-            if(strpos($is_tor_browser, 'tor') == false)
+            if(strpos($is_tor_browser, 'torAlert') == false)
             {
                 $data_row[keys::$redirection] = "tor_alert?url=".$row->URL."&title=".$row->TITLE
                     ."&desc=".str_replace("&","",$row->DESCRIPTION)

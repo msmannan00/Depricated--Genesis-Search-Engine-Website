@@ -7,9 +7,128 @@
     -moz-user-select: none;     
     -ms-user-select: none;
     outline:none;
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
+}
+html, body {
+    overflow-x: hidden;
 }
 
+/*footer-bar style*/
+.footer-bar{
+    margin-top: 50px;
+    width: 100%;
+    position: absolute;
+}
+
+.footer-bar__content{
+    background-color:#f2f2f2;
+    height: 42px;
+    border-style: solid;border-right-width: 0px;
+    border-left-width: 0px;border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color:#e3e3e3;
+}
+
+.footer-bar__text-top{
+    color:#767676;
+    font-size: 15px;
+    margin-left: 30px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.footer-bar__text-bottom{
+    color:#767676;
+    font-size: 13px;
+    margin-left: 30px;
+    padding-top: 11px;
+    text-align: left;
+}
+
+.footer-bar__catagories--bottom-spacing{
+    margin-left: 23px
+}
+
+.footer-bar__catagories{
+    cursor: pointer;
+    color:#767676;
+}
+
+/*footer-bar events*/
+
+.footer-bar__catagories:hover{
+    text-decoration: underline;
+    color:#767676;
+}
+
+/*light-header style*/
+.light_header{
+    color:#000000;
+    text-align: right;
+    margin-top: -10px;
+}
+
+.light_header__catagory{
+    margin-right: 13px;
+    cursor: pointer;
+    font-size: 14.2px;
+}
+
+/*light-header events*/
+.light_header__catagory:hover{
+    text-decoration: underline;
+}
+
+/*grey-header style*/
+.grey-header{
+    background-color:#fafafa;
+    height: auto;
+    color:#000000;
+    text-align: right;
+    margin-top: -24px;
+    padding-top: 4px;
+    padding-bottom: -2px;
+    border-bottom-color:#efefef;
+    border-style: solid;border-right-width: 0;
+    border-left-width: 0;border-top-width: 0;
+    border-bottom-width: 1px;
+}
+
+.grey-header__logo{
+    width: 80px;
+    float: left;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top: 8.5px;
+}
+
+.grey-header__catagories-container{
+    margin-top: 3px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+/*grey-header events*/
+.grey-header__catagories:hover{
+    text-decoration: underline;
+}
+
+.grey-header__catagories{
+    margin-right: 13px;
+    cursor: pointer;
+    font-size: 14.2px;
+    margin-top: 101px;
+}
+
+/*notice-header events*/
+.notice-header{
+    color:#dd4b39;
+    font-family: Arial;
+    font-size: 17.5px;
+    height: 40px;
+    border-bottom:#f2f2f2 solid 1px ;
+}
+
+.notice-header__message{
+    margin-top: 15px;
+    margin-left: 50px
+}

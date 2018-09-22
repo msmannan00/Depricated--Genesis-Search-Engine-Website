@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use constant;
 use keys;
 
-class tor_model extends Model
+class tor_alert_model extends Model
 {
     public function getURL()
     {
@@ -38,5 +38,9 @@ class tor_model extends Model
         return $_GET[keys::$update_date];
     }
 
+    public function getNoticeMessage()
+    {
+        return constant::$notice_important;
+    }
 
 }
