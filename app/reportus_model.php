@@ -13,8 +13,9 @@ class reportus_model extends Model
     public function addReportedWebsite()
     {
         $url = $_GET[keys::$report];
-        $query = "INSERT INTO `report_web`(`URL`, `DATE`) VALUES ('".$url."', '".date("Y/m/d")."')";
-        DB::insert($query);
+        $query = "INSERT INTO `report_web`(`URL`, `DATE`) VALUES (?,?)";
+        $values = [$url,'.date("Y/m/d").'];
+        DB::insert($query, $values);
     }
 
     public function getNoticeMessage()

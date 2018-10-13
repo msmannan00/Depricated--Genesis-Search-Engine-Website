@@ -10,6 +10,7 @@ class keys
     public static $update_date = 'update_date';
     public static $success= 'success';
     public static $notice= 'notice';
+    public static $key_word= 'key_word';
 
     /*search.blade*/
     public static $query= 'query';
@@ -36,6 +37,5 @@ class keys
 
     /*reportus.blade*/
     public static $report= 'rep';
-
 
 }

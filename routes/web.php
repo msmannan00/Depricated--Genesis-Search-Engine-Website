@@ -26,3 +26,7 @@ Route::get('/add_website','add_website@getView');
 Route::get('/reportus','reportus@getView');
 
 Route::get('/about','about@getView');
+
+Route::get('/update_cache','update_cache@getView');
+
+Route::get('/crawler', 'crawler@getView');

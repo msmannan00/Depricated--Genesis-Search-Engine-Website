@@ -17,9 +17,13 @@
 <div class="hc_drop-down hc_drop-down--margin-left disable-highlight">
     <div class="hc_drop-down__button">Add website</div>
     <div class="hc_drop-down__content hc_drop-down__content--size">
-        <p class="hc_drop-down__report-header">Please Enter your Website Address</p>
-        <form method="GET" action="add_website" enctype="multipart/form-data" onsubmit="return url.value!={{constant::$emptyString}}">
+        <p class="hc_drop-down__report-header">Report Website</p>
+        <hr>
+        <form method="GET" action="add_website" enctype="multipart/form-data" onsubmit="return url.value!='{{constant::$emptyString}}'">
+            <label style="color: darkgrey;margin-left: 8px;font-weight: bold">Website</label>
             <input autocomplete="off" type="search" name="url" value="" class="form-control hc_drop-down__report-input disable-highlight">
+            <label style="color: darkgrey;margin-left: 8px;font-weight: bold;margin-top: 8px">Message</label>
+            <textarea autocomplete="off" type="search" name="desc" value="" class="form-control hc_drop-down__report-input hc_drop-down__report-input--height disable-highlight"></textarea>
             <input autocomplete="off" type="submit" value="SUBMIT" class="btn btn-primary hc_drop-down__report-button">
         </form>
     </div>

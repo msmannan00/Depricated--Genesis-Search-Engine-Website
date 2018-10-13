@@ -117,7 +117,7 @@
 /*result-url style*/
 /*********************************************** File Divider ****************************************************/
 .wp_result{
-    min-height: 36.4vh;
+    min-height: 45vh;
 }
 
 .wp_result__header{
@@ -167,7 +167,7 @@
 .wp_pagination__navigation{
 	margin-top: 40px;
 	background-color:#f2f2f2;
-	height: 45px;
+	height: 44px;
 	width:100px;
 	border-width: 0px;
 	color:#6c6c6c;
@@ -182,7 +182,7 @@
 }
 
 .wp_pagination__margin-right{
-	margin-left: -4px;
+	margin-left: -5px;
 }
 
 .wp_pagination_pages {
@@ -209,15 +209,23 @@
 }
 
 /*result-url events*/
+.wp_pagination--border-left:hover{
+    border-width: 0.8px;
+    border-right-width: 0px;
+}
+.wp_pagination--border-right:hover{
+    border-width: 0.8px;
+    border-left-width: 0px;
+}
 .wp_pagination__navigation:hover{
 	color : #000000;
     backgroundColor : #F2F2F2;	
     background: linear-gradient(#f7f7f7,#f1f1f1);	
 	border-style: solid;
-	border-width: 0.8px;
 	border-color:#C4C4C4;
 	border-radius: 2px;
 	cursor: default;
+    height: 43px;
 }
 
 /*header_catagory.blade*/
@@ -251,25 +259,56 @@
 }
 
 .hc_drop-down__report-header{
-    margin-left: 5px;
+    margin-left: 18px;
     margin-top: 10px;
-    text-align: center;
+    font-weight: bold;
+    color:darkgray;
+    margin-bottom: -5px;
 }
 
 .hc_drop-down__report-input{
-    width: 215px;
-    border-radius: 4px;
+    width: 214px;
+    border-radius: 2px;
     outline: none;
-    margin-top: -5px;
-    margin-left: 5px;
+    margin-top: -6px;
+    margin-left: 8px;
+    font-size: 13px;
+    overflow-y: hidden;
+    background-color: #fbfbfb;
+    border: 1px #e9e9e9 solid;
+    height: 33px;
+}
+
+.hc_drop-down__report-input:focus
+{
+    background-color: red;
+}
+
+.form-control:focus {
+    border: 1px #e9e9e9 solid;
+    box-shadow: 0px 1px 3px 0px lightgray;
+}
+.hc_drop-down__report-input:focus{
+    background-color: #fbfbfb;
+}
+
+.hc_drop-down__report-input--height{
+    height:100px;
+    resize: none;
+    padding: 5px;
 }
 
 .hc_drop-down__report-button{
-    width: 215px;
-    border-radius: 4px;
+    width: 80px;
+    height: 25px;
+    border-radius: 2px;
     outline: none;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 8px;
+    margin-left: 8px;
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 25px;
+    font-weight: bold;
 }
 
 .hc_drop-down__content {
@@ -281,14 +320,13 @@
     z-index: 1;
     margin-left: 33px;
     font-size: 14px;
-    height: 70px;
     margin-top: -3px;
 }
 
 .hc_drop-down__content--size{
-    width: 225px;
-    height: 128px;
-    margin-left: 10px
+    width: 230px;
+    margin-left: 10px;
+    min-height: 295px;
 }
 
 .hc_drop-down__content a {

@@ -14,8 +14,9 @@ class add_website_model extends Model
     public function addURL()
     {
         $url = $_GET[keys::$url];
-        $query = "INSERT INTO `newpages`(`URL`, `DATE`) VALUES ('".$url."', '".date("Y/m/d")."')";
-        DB::insert($query);
+        $query = "INSERT INTO `newpages`(`URL`, `DATE`) VALUES (?,?)";
+        $values = [$url,'.date("Y/m/d").'];
+        DB::insert($query, $values);
     }
 
     public function getURL()

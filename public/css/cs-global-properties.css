@@ -71,11 +71,13 @@ html, body {
     margin-right: 13px;
     cursor: pointer;
     font-size: 14.2px;
+    color: black;
 }
 
 /*light-header events*/
 .light_header__catagory:hover{
     text-decoration: underline;
+    color: black;
 }
 
 /*grey-header style*/
@@ -118,7 +120,6 @@ html, body {
     font-size: 14.2px;
     margin-top: 101px;
 }
-
 /*notice-header events*/
 .notice-header{
     color:#dd4b39;

@@ -19,12 +19,16 @@ class search_model extends Model
         $search_type = $_GET[keys::$type];
         $data = array();
         $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
-        $paginationOffset = $_GET[keys::$page_number] - 1;
-        $result = DB::select("SELECT * FROM webpages WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit);
+        $user_query =  $_GET[keys::$name];
+        $user_query = str_replace(' ', '|', $user_query);
 
+        $paginationOffset = $_GET[keys::$page_number] - 1;
+        $user_query = str_replace("[","]",$user_query);
+        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE KEY_WORD REGEXP ? AND S_TYPE = '".$search_type."'  AND N_TYPE='".Session::get(keys::$network_type)."' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query)]);
+        $is_tor = strpos($is_tor_browser, 'ozilla');
         foreach($result as $row)
         {
-            if(strpos($is_tor_browser, 'torAlert') == false)
+            if(!$is_tor)
             {
                 $data_row[keys::$redirection] = "tor_alert?url=".$row->URL."&title=".$row->TITLE
                     ."&desc=".str_replace("&","",$row->DESCRIPTION)
@@ -93,9 +97,12 @@ class search_model extends Model
                 $query_table = db_constants::$webpages_tname;
             }
         }
+        $user_query =  $_GET[keys::$name];
+        $user_query = str_replace(' ', '|', $user_query);
 
         $search_type = $_GET[keys::$type];
-        $result = DB::select("SELECT count(*) as count FROM ".$query_table." WHERE S_TYPE = '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'");
+        $user_query = str_replace("[","]",$user_query);
+        $result = DB::select(DB::raw("SELECT count(*) as count FROM webpages WHERE KEY_WORD REGEXP ? AND S_TYPE = '".$search_type."'  AND N_TYPE='".Session::get(keys::$network_type)."'"),[addslashes($user_query)]);
         $this->total_rows = $result[0]->count;
         return $result[0]->count;
     }
