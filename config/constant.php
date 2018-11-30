@@ -19,17 +19,19 @@ class constant
     /*search.blade*/
     public static $navigation_limit = 5;
     public static $pagination_limit = 15;
+    public static $dlink_navigation_limit = 5;
+    public static $dlink_pagination_limit = 35;
     public static $max_description_limit= 220;
     public static $search_icon= 'images/search.png';
-    public static $search_base_url= 'http://localhost/BoogleSearch/public/search?q=';
+    public static $search_base_url= 'http://localhost/BoogleSearch/public/search?';
 
     /*Notice Messages*/
     public static $notice_important = 'Important Notice';
+    public static $notice_aboutus = 'About Us';
     public static $add_website_message_success = 'Your website has been added to our remote server. it will take 2 to 3 days to become live. make sure
         your webserver is up if the website is unreachable our server would try 3 times after that it will be removed
         from our database and you would have to add it again. Our server will automatically detect if its an image
-        video or a website its title page and description  If you want to reach us for further information you can contact
-        us with our information given below';
+        video or a website its title page and description  If you want to reach us for further information you can always contact us';
 
 
 }

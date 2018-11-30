@@ -17,7 +17,7 @@
 }
 
 .ru_result__container{
-    border-radius: 8px;
+    border-radius: 4px;
     align-self: center;
     box-shadow : 0px 4px 8px -1px #cccccc;
     border-color: #e7e7e7;
@@ -30,7 +30,7 @@
     margin-top: 37px;
     padding-left: 20px;
     padding-right: 20px;
-    height: 270px;
+    height: 485px;
 }
 
 .ru_complaint__container--height {
@@ -105,10 +105,17 @@
     width:575px;
     margin:0 auto;
     display:block;
-    margin-top: 40px;
+    margin-top: 0px;
     margin-left: 0px;
     margin-bottom: 20px;
 }
+
+.ru-search-area{
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
 .ru-search-box__search-input{
     align-self: center;
     width:90%;
@@ -119,15 +126,17 @@
 }
 
 .ru_search-form{
-    width: 40%;
+    width: 100%;
     float: left
 }
 
 .ru-search-box__search-input:focus{
-    border:0px solid;
-    outline: none;
 }
 
 .ru-search-box:hover{
+    box-shadow : 0px 4px 8px -1.5px #cccccc;
+}
+
+.ru-search-box:focus{
     box-shadow : 0px 4px 8px -1.5px #cccccc;
 }

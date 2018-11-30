@@ -13,9 +13,9 @@
 }
 
 .dl_content__inner-container{
-    width: 190px;
+    width: 260px;
     height:190px;
-    margin-left: 20px;
+    margin-left: 30px;
     float: left;
     margin-top: 20px;
     background: -moz-linear-gradient(#fbfbfb,#fbfbfb);
@@ -36,7 +36,7 @@
 
 .dl_content__header{
     width:100%;
-    font-size: 15px;
+    font-size: 12px;
     cursor: pointer;
     font-family: arial,sans-serif;
     line-height: 1.2;
@@ -54,8 +54,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    margin-top: 21px;
+    width: 23%;
+    margin-top: -8px;
 }
 
 .dl_content__link{
@@ -70,6 +70,12 @@
     word-wrap: break-word;
 }
 
+.dl_content__host {
+    margin-left: 8px;
+    font-size: 11.5px;
+    margin-top:36px;
+    color: darkgrey;
+}
 .dl_content__extension{
     background-color: #ccccff;
     border-bottom-right-radius: 3px;

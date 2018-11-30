@@ -24,10 +24,22 @@ class search_model extends Model
 
         $paginationOffset = $_GET[keys::$page_number] - 1;
         $user_query = str_replace("[","]",$user_query);
-        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE KEY_WORD REGEXP ? AND S_TYPE = '".$search_type."'  AND N_TYPE='".Session::get(keys::$network_type)."' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query)]);
+        $query_keyWord = '';
+        if($search_type=='all')
+        {
+            $query_keyWord = '';
+        }
+        else
+        {
+            $query_keyWord = ' KEY_WORD LIKE "%'.$search_type.'%" AND';
+        }
+
+        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE (KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND ".$query_keyWord." N_TYPE='".Session::get(keys::$network_type)."' ORDER by UPDATE_DATE DESC , TITLE = 'Title not found' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query),addslashes($user_query)]);
+
         $is_tor = strpos($is_tor_browser, 'ozilla');
         foreach($result as $row)
         {
+        	$url_decoded = urldecode ($row->URL );
             if(!$is_tor)
             {
                 $data_row[keys::$redirection] = "tor_alert?url=".$row->URL."&title=".$row->TITLE
@@ -36,10 +48,10 @@ class search_model extends Model
             }
             else
             {
-                $data_row[keys::$redirection] = $row->URL;
+                $data_row[keys::$redirection] = $url_decoded;
             }
 
-            $data_row[keys::$url] = $row->URL;
+            $data_row[keys::$url] = $url_decoded;
             $data_row[keys::$id] = $row->ID;
             $data_row[keys::$title] = $row->TITLE;
             $data_row[keys::$description] = $row->DESCRIPTION;
@@ -58,24 +70,29 @@ class search_model extends Model
         $data_dlink = array();
         $is_tor_browser =  $_SERVER['HTTP_USER_AGENT'];
         $paginationOffset = $_GET[keys::$page_number] - 1;
+        $user_query =  $_GET[keys::$name];
 
-        $query = "SELECT * FROM dlinks WHERE S_TYPE= '".$search_type."' AND N_TYPE='".Session::get(keys::$network_type)."'";
+        $user_query = str_replace(' ', '|', $user_query);
+        $user_query = str_replace("[","]",$user_query);
+
+        $paginationOffset = $_GET[keys::$page_number] - 1;
+        $query = "SELECT dlinks.*,webpages.TITLE as TITLE FROM dlinks,webpages WHERE dlinks.WP_FK = webpages.ID AND dlinks.S_TYPE= '".$search_type."' AND (webpages.TITLE REGEXP '".$user_query."' OR webpages.KEY_WORD REGEXP '".$user_query."') AND dlinks.N_TYPE='".Session::get(keys::$network_type)."'"." LIMIT ".constant::$dlink_pagination_limit." OFFSET ".$paginationOffset*constant::$dlink_pagination_limit;
         $result = DB::select($query);
 
         foreach($result as $row)
         {
             $data_row[keys::$dlink_url] = $row->URL;
-            $title_length = strlen($row->TITLE);
-            $title_wrapped = '';
-            if($title_length>20){
-                $title_wrapped = substr($row->TITLE,$title_length-20,$title_length);
-            }
-            else{
-                $title_wrapped = substr($row->TITLE,0,$title_length-4);
-            }
-            $data_row[keys::$dlink_title] =substr($title_wrapped,0,strlen($title_wrapped)-4);
+            $title_length = strlen($row->URL);
+            $title_wrapped = $row->TITLE;
+            //if($title_length>20){
+            //    $title_wrapped = substr($row->TITLE,$title_length-20,$title_length);
+            //}
+            //else{
+            //    $title_wrapped = substr($row->TITLE,0,$title_length-4);
+            //}
+            $data_row[keys::$dlink_title] = $title_wrapped;
             $data_row[keys::$dlink_type] = $row->S_TYPE;
-            $data_row[keys::$dlink_extension] = substr($row->TITLE,$title_length-3,$title_length);
+            $data_row[keys::$dlink_extension] = substr($row->URL,$title_length-3,$title_length);
             array_push($data_dlink,$data_row);
         }
 
@@ -86,24 +103,34 @@ class search_model extends Model
     public function getTotalRows()
     {
         $query_table = '';
+        $query_keyWord = '';
+        $search_type = $_GET[keys::$type];
         if (!empty($_GET[keys::$type])) {
             $link_type = $_GET[keys::$type];
-            if($link_type!='all'&&$link_type!='finance'&&$link_type!='news')
+            if($link_type=='all')
             {
-                $query_table = db_constants::$dlinks_tname;
+                $query_table = db_constants::$webpages_tname;
+                $query_keyWord = '(KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND N_TYPE=';
+            }
+            else if($link_type=='finance' || $link_type=='news')
+            {
+                $query_table = db_constants::$webpages_tname;
+                $query_keyWord = '(KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND KEY_WORD LIKE "%'.$search_type.'%" AND N_TYPE=';
             }
             else
             {
-                $query_table = db_constants::$webpages_tname;
+                $query_table = db_constants::$webpages_tname.",".db_constants::$dlinks_tname;
+                $query_keyWord = db_constants::$webpages_tname.".ID=".db_constants::$dlinks_tname.".WP_FK AND ".db_constants::$webpages_tname.".TITLE REGEXP ? AND ".db_constants::$dlinks_tname.'.S_TYPE="'.$search_type.'" AND '.db_constants::$dlinks_tname.".N_TYPE=";
+
             }
         }
         $user_query =  $_GET[keys::$name];
         $user_query = str_replace(' ', '|', $user_query);
 
-        $search_type = $_GET[keys::$type];
         $user_query = str_replace("[","]",$user_query);
-        $result = DB::select(DB::raw("SELECT count(*) as count FROM webpages WHERE KEY_WORD REGEXP ? AND S_TYPE = '".$search_type."'  AND N_TYPE='".Session::get(keys::$network_type)."'"),[addslashes($user_query)]);
+        $result = DB::select(DB::raw("SELECT count(*) as count FROM ".$query_table." WHERE ".$query_keyWord."'".Session::get(keys::$network_type)."'"),[addslashes($user_query),addslashes($user_query)]);
         $this->total_rows = $result[0]->count;
+
         return $result[0]->count;
     }
 

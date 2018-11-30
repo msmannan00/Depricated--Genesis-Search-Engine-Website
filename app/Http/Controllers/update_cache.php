@@ -13,6 +13,6 @@ class update_cache extends Controller
     {
         $update_cache_model = new update_cache_model;
         $update_cache_model->updateCache();
-        return "RECORD SUCCESSFULLY ADDED";
+        return "";
     }
 }

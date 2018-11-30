@@ -8,8 +8,9 @@ use keys;
 
 class about_model extends Model
 {
-    public function getNoticeMessage()
+    public function getNotice()
     {
-        return constant::$notice_important;
+        return constant::$notice_aboutus;
     }
+
 }

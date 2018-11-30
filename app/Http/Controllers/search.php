@@ -41,7 +41,15 @@ class search extends Controller
     public function getNavBarIndex($totalURLFound)
     {
         $pageNumber = $_GET[keys::$page_number]-1;
-        $navDifference = $pageNumber - ceil(floatval($totalURLFound)/constant::$pagination_limit);
+        $search_type = $_GET[keys::$type];
+        if($search_type=="image"||$search_type=="video"||$search_type=="doc")
+        {
+            $navDifference = $pageNumber - ceil(floatval($totalURLFound)/constant::$dlink_pagination_limit);
+        }
+        else
+        {
+            $navDifference = $pageNumber - ceil(floatval($totalURLFound)/constant::$pagination_limit);
+        }
 
         //IF CURRENT INDEX IS AT STARTING OR ENDING
         if(abs($navDifference-1) < constant::$navigation_limit)

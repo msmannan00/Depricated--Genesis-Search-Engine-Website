@@ -3,6 +3,7 @@ class keys
 {
     /*generic_data*/
     public static $url= 'url';
+    public static $url_home= 'url_home';
     public static $title= 'title';
     public static $description= 'desc';
     public static $type = 's_type';
@@ -23,6 +24,7 @@ class keys
     public static $result_count = 'result_count';
     public static $name= 'q';
     public static $network_type = 'n_type';
+    public static $webpage_id = 'WP_FK';
     public static $id= 'ID';
     public static $redirection= 'WEB_REDIRECTION';
     public static $content_type= 'content_type';

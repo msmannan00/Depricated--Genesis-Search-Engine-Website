@@ -24,6 +24,11 @@ class add_website_model extends Model
         return $_GET[keys::$url];
     }
 
+    public function getURLHome()
+    {
+        return parse_url($_GET[keys::$url], PHP_URL_HOST);;
+    }
+
     public function getTitle()
     {
         return "WEBSITE ADDED IN OUR DATABASE";

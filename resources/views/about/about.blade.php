@@ -12,7 +12,9 @@
 
     @include('blades.notice_header')
 
+
     <div class="ab_result">
+        <div class="ab_result__container">
             <article class="markdown-body entry-content" itemprop="text">
                 <h3 class="ab_result__header"><a id="user-content-boogle-search" class="anchor" aria-hidden="true" href="#boogle-search"></a>Boogle Search</h3>
                 <p class="ab_result__description" style="margin-top: 10px">Boogle Search is a free and open source tool for investigating the Dark Web. For all the amazing technological innovations in the anonymity and privacy space, there is always a consabnt threat that has no effective technological patch human error. Boogle Search Whether it is operational security leaks or software misconfiguration - most often times the atabcks on anonymity don't come from breaking the underlying systems, but from ourselves.</p>
@@ -37,6 +39,7 @@
                 <h3 class="ab_result__header"><a id="user-content-boogle-search" class="anchor" aria-hidden="true" href="#boogle-search"></a>License</h3>
                 <p class="ab_result__description">The license is Apache License Version 2.0.It's free and you can use it however you want it wharever way.For more information, see <a href="http://www.apache.org/licenses/LICENSE-2.0.txt" rel="nofollow">http://www.apache.org/licenses/LICENSE-2.0.txt</a></p>
             </article>
+        </div>
     </div>
     <!--footer-->
 

@@ -20,6 +20,7 @@ class add_website extends Controller
         return view('addwebsite.add_website')
             ->with(keys::$url, $addwebsite_model->addURL())
             ->with(keys::$url, $addwebsite_model->getURL())
+            ->with(keys::$url_home, $addwebsite_model->getURLHome())
             ->with(keys::$title, $addwebsite_model->getTitle())
             ->with(keys::$description, $addwebsite_model->getDescription())
             ->with(keys::$type, $addwebsite_model->getType())

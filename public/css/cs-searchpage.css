@@ -11,13 +11,14 @@
 	border-color:#ebebeb;
     width: 2000px;
     padding-top: 23px;
-    margin-left: 13.5px;
+    margin-left: 0px;
 }
 
 .sb_detail-header__logo{
     width: 120px;
 	float: left;
     cursor:pointer;
+    margin-left: 13px;
 }
 
 .sb_detail-header__search-form{
@@ -116,8 +117,33 @@
 
 /*result-url style*/
 /*********************************************** File Divider ****************************************************/
+.wp_image{
+    float: left;
+    width: 495px;
+    height: 370px;
+    border-radius: 4px;
+    border: grey 1px solid;
+    box-shadow : 0px 2px 4px -2px #cccccc;
+    border-color: #e7e7e7;
+}
+
+/*********************************************** File Divider ****************************************************/
+.wp_info{
+    float: left;
+    width: 495px;
+    height: 550px;
+    border-radius: 4px;
+    border: grey 1px solid;
+    box-shadow : 0px 2px 4px -2px #cccccc;
+    border-color: #e7e7e7;
+}
+
+/*********************************************** File Divider ****************************************************/
 .wp_result{
     min-height: 45vh;
+    width: 50%;
+    float: left;
+    margin-top: -5px;
 }
 
 .wp_result__header{
@@ -134,6 +160,7 @@
 
 .wp_result__header--spacing-top{
     margin-top: 22px;
+    min-height: 65px;
 }
 
 .wp_result__link{
@@ -152,6 +179,7 @@
 	margin-left: 165.5px;
 	color:#545454;
 	width: 550px;
+    word-wrap: break-word;
 }
 
 /*result-url events*/
@@ -162,6 +190,11 @@
 /*pagination style*/
 .wp_pagination_view{
 	margin-left: -85px;
+    clear: left;
+}
+
+.dl_pagination_view{
+    margin-left: -190px;
 }
 
 .wp_pagination__navigation{
@@ -267,35 +300,43 @@
 }
 
 .hc_drop-down__report-input{
+    border-radius: 3px;
+    height: 33px;
+    border-color: #e7e7e7;
     width: 214px;
-    border-radius: 2px;
-    outline: none;
+    margin:0 auto;
+    display:block;
     margin-top: -6px;
     margin-left: 8px;
     font-size: 13px;
-    overflow-y: hidden;
-    background-color: #fbfbfb;
-    border: 1px #e9e9e9 solid;
-    height: 33px;
-}
-
-.hc_drop-down__report-input:focus
-{
-    background-color: red;
 }
 
 .form-control:focus {
-    border: 1px #e9e9e9 solid;
+    border: 1px solid;
     box-shadow: 0px 1px 3px 0px lightgray;
+    border-color: #66b3ff;
 }
+.hc_drop-down__report-input:hover{
+    box-shadow : 0px 3px 8px -1.5px #cccccc;
+}
+
 .hc_drop-down__report-input:focus{
-    background-color: #fbfbfb;
+    box-shadow : 0px 3px 8px -1.5px #cccccc;
 }
 
 .hc_drop-down__report-input--height{
     height:100px;
     resize: none;
     padding: 5px;
+}
+.hc_drop-down__report-label{
+    color: darkgrey;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.hc_drop-down__report-label--margin-top{
+    margin-top: 8px;
 }
 
 .hc_drop-down__report-button{

@@ -17,7 +17,8 @@ class about extends Controller
     {
         $about_model = new about_model;
         return view('about.about')
-        ->with(keys::$notice, $about_model->getNoticeMessage());
+
+        ->with(keys::$notice, $about_model->getNotice());
     }
 
 }
