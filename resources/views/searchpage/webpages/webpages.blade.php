@@ -18,34 +18,53 @@
         @if($s_type_selected=="all" && $result_count>0 && $p_num==0)
 
             @if ($row_count ==3)
-                <div class="wp_image" style="height:180px;margin-bottom: 20px;margin-left: 162.5px">
+                <div class="wp_extra_image">
 
-                    <p style="font-size: 17px;font-family: Arial;margin-left: 20px;margin-top: 10px">Images</p>
-                    <hr style="margin-top: -10px"></hr>
-                    <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-                    <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-                    <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-                    <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
+                    <p class="wp_extra_title">Images</p>
+                    <hr class="wp_extra_divider">
+                    </hr>
+                    <div class="wp_extra_item">
+                        <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+                    </div>
+                    <div class="wp_extra_item">
+                        <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+                    </div>
+                    <div class="wp_extra_item">
+                        <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+                    </div>
+                    <div class="wp_extra_item">
+                        <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+                    </div>
                 </div>
             @endif
             @if ($row_count ==5)
-                    <div class="wp_image" style="height:193px;margin-bottom: 20px;margin-left: 162.5px">
+                    <div class="wp_extra_info disable-highlight">
 
-                        <p style="font-size: 17px;font-family: Arial;margin-left: 20px;margin-top: 10px">News</p>
-                        <hr style="margin-top: -10px"></hr>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: -5px"></div>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: 10px"></div>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: 10px"></div>
+                        <p class="wp_extra_info_title">News</p>
+                        <hr ></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> The history of Pakistan encompasses the history of the region constituting modern-day Pakistan, which is intertwined with the history of the broader Indian </div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
+                        <hr class="wp_extra_info_divider"></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> Clip path is applied to the element regardless of it's contents  is clipped within it's bounds, hence the text not behaving as you might expect </p></div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
+                        <hr class="wp_extra_info_divider"></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> program is a computer program that outputs or displays the message "Hello, World!". Because it is very simple in most programming languages, it is often used to illustrate the basic syntax of a programming language and is often the first program people write </p></div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
                     </div>
             @endif
             @if ($row_count ==7)
-                    <div class="wp_image" style="height:193px;margin-bottom: 20px;margin-left: 162.5px">
+                    <div class="wp_extra_info disable-highlight">
 
-                        <p style="font-size: 17px;font-family: Arial;margin-left: 20px;margin-top: 10px">Articles</p>
-                        <hr style="margin-top: -10px"></hr>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: -5px"></div>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: 10px"></div>
-                        <div style="background-color: #f1f1f1;cursor: pointer;width: 96%;height: 35px;margin-left: 10px;margin-top: 10px"></div>
+                        <p class="wp_extra_info_title">Articles</p>
+                        <hr ></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> The history of Pakistan encompasses the history of the region constituting modern-day Pakistan, which is intertwined with the history of the broader Indian </div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
+                        <hr class="wp_extra_info_divider"></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> Clip path is applied to the element regardless of it's contents  is clipped within it's bounds, hence the text not behaving as you might expect </p></div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
+                        <hr class="wp_extra_info_divider"></hr>
+                        <div class="wp_extra_info_item"><p class="wp_extra_info_item--text"> program is a computer program that outputs or displays the message "Hello, World!". Because it is very simple in most programming languages, it is often used to illustrate the basic syntax of a programming language and is often the first program people write </p></div>
+                        <p style="float: right;margin-top: -33px;margin-right: 16px"><i class="arrow right"></i></p>
                     </div>
             @endif
         @endif
@@ -58,7 +77,7 @@
 </div>
 
 @if ($s_type_selected=="all" && $result_count>0 && $p_num==0)
-    <div class="wp_info" >
+    <div class="wp_info">
 
         <p style="font-size: 23px;font-family: Arial;margin-left: 20px;margin-top: 10px">Oculus Search</p>
         <p style="font-size: 14px;color: #1c7430;font-family: Arial;margin-left: 20px;margin-top: -22px">http://localhost/BoogleSearch/public/sear</p>
@@ -71,27 +90,48 @@
         <div style="font-size: 14px;color: grey;font-family: Arial;margin-left: 20px;margin-top: 10px;width: 94%"><strong>Documents: </strong><span style="font-size: 14px;color: blue">4123</span></div>
         <div style="font-size: 14px;color: grey;font-family: Arial;margin-left: 20px;margin-top: 10px;width: 94%"><strong>Finance: </strong><span style="font-size: 14px;color: blue">3123</span></div>
         <p style="font-size: 18px;color: grey;font-family: Arial;margin-left: 20px;margin-top: 25px;width: 94%">People also search for</p>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 20px;float: left"></div>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 20px;float: left"></div>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 20px;float: left"></div>
+        <div class="wp_extra_item disable-highlight">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item disable-highlight">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item disable-highlight">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
     </div>
 @endif
 
 @if ($s_type_selected=="all" && $result_count>0 && $p_num==0)
-    <div class="wp_image" style="margin-top: 40px">
+    <div class="wp_image" style="margin-top: 40px;">
 
         <p style="font-size: 21px;font-family: Arial;margin-left: 20px;margin-top: 10px">Images</p>
         <hr style="margin-top: -5px"></hr>
         <p style="font-size: 14px;color: grey;font-family: Arial;margin-left: 20px;margin-top: 0px;width: 94%">You may also find the following images interesting</p>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-
-        <div style="margin-top: 30px;background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="margin-top: 30px;background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="margin-top: 30px;background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
-        <div style="margin-top: 30px;background-color: #f1f1f1;cursor: pointer;width: 100px;height: 100px;margin-left: 18px;float: left"></div>
+        <div class="wp_extra_item">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item" >
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item wp_extra_item--margin-top">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item wp_extra_item--margin-top">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item wp_extra_item--margin-top">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
+        <div class="wp_extra_item wp_extra_item--margin-top">
+            <img src="{{constant::$image_icon}}" class="wp_extra_item--icon"/>
+        </div>
     </div>
 @endif
 

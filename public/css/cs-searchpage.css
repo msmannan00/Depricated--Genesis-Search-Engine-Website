@@ -1,35 +1,41 @@
+/*page_size*/
+.sp_size{
+    width: 1800px;
+}
+
 /*detail_header style*/
 .sb_detail-header{
 	height: 122px;
-	background-color:#fafafa;
 	margin-top: -24px;
-
 	border-bottom-color:#efefef;
 	border-style: solid;border-right-width: 0px;
 	border-left-width: 0px;border-top-width: 1px;
 	border-bottom-width: 1px;
 	border-color:#ebebeb;
-    width: 2000px;
+    width: 100%;
     padding-top: 23px;
     margin-left: 0px;
+    background-color: #fcfcfc;
 }
 
 .sb_detail-header__logo{
-    width: 120px;
+    width: 91px;
 	float: left;
     cursor:pointer;
-    margin-left: 13px;
+    margin-top: 4px;
+    margin-left: 30px;
+    margin-right: 17px;
 }
 
 .sb_detail-header__search-form{
-	width: 23%;
-	float: left
+	width: 478px;
+	float: left;
 }
 
 .sb_detail-header__search-icon{
 	width: 17px;
     position: absolute;
-    left: 748px;
+    left: 746px;
     top: 33px;
 }
 
@@ -82,10 +88,19 @@
     width: 900px;
 }
 
+.sb_detail-header__margin-left{
+    margin-left: 20px;
+    margin-right: -2px;
+}
+
+.sb_detail-header__catagories--margin-left{
+    margin-left: 15px;
+}
+
 .sb_detail-header__catagories{
-	margin-left: 20px;
 	font-size: 12.5px;
 	color: #777;
+    font-family: Arial;
 	cursor: pointer;
 	display: block;
 	width: 49px;
@@ -93,7 +108,6 @@
 	float: left;
 	text-align: center;
     user-select: none;
-    font-family: Arial;
 }
 
 /*search events*/
@@ -110,17 +124,112 @@
 }
 
 .active{
-	color: #1a88ed;
+	color: darkblue;
 	font-weight : bold;
-	border-bottom : 3px solid #1A73E8;
+	border-bottom : 3px solid darkblue;
 }
 
-/*result-url style*/
+/*result-image-extra style*/
 /*********************************************** File Divider ****************************************************/
+.wp_extra_image{
+    float: left;
+    width: 495px;
+    border-radius: 4px;
+    border: grey 1px solid;
+    box-shadow : 0px 2px 4px -2px #cccccc;
+    border-color: #e7e7e7;
+    height:180px;
+    margin-bottom: 20px;
+    margin-left: 162.5px;
+}
+.wp_extra_item--margin-top {
+    margin-top: 15px;
+}
+
+.wp_extra_item{
+    background-color: #f8f8f8;
+    cursor: pointer;width: 100px;
+    height: 100px;
+    margin-left: 18px;float: left;
+    transition: box-shadow .3s;
+    border-radius: 3px;
+}
+.wp_extra_item--icon{
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.wp_extra_item:hover{
+    box-shadow : 0px 4px 6px 0px #cccccc;
+}
+.wp_extra_title{
+    font-size: 17px;
+    font-family: Arial;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.wp_extra_divider{
+    margin-top: -10px;
+}
+
+
+/*result-extra-news-article-other style*/
+/*********************************************** File Divider ****************************************************/
+.wp_extra_info{
+    float: left;
+    width: 555px;
+    border-radius: 4px;
+    border: grey 1px solid;
+    box-shadow : 0px 4px 6px -2px #cccccc;
+    border-color: #e7e7e7;
+    height:182px;
+    margin-bottom: 20px;
+    margin-left: 162.5px;
+}
+.wp_extra_info_item{
+    cursor: pointer;
+    width: 96%;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 9px;
+    border-radius: 4px;
+}
+.wp_extra_info_item--text{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 9px;
+    font-size: 16px;
+    font-family: arial,sans-serif;
+    height: 33px;
+    color: #4d4d4d;
+    padding-right: 10px;
+    padding-top: 5px;
+    margin-top: -11px;
+    transition: text-decoration .3s;
+}
+
+.wp_extra_info_item--text:hover{
+    text-decoration: underline;
+}
+
+.wp_extra_info_title{
+    font-size: 18px;
+    font-family: Arial;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: -6px;
+}
+.wp_extra_info_divider{
+    margin-top: 1px;
+}
+
 .wp_image{
     float: left;
     width: 495px;
-    height: 370px;
+    height: 345px;
     border-radius: 4px;
     border: grey 1px solid;
     box-shadow : 0px 2px 4px -2px #cccccc;
@@ -136,14 +245,15 @@
     border: grey 1px solid;
     box-shadow : 0px 2px 4px -2px #cccccc;
     border-color: #e7e7e7;
+    margin-right: 300px;
 }
 
 /*********************************************** File Divider ****************************************************/
 .wp_result{
     min-height: 45vh;
-    width: 50%;
+    width: 41%;
     float: left;
-    margin-top: -5px;
+    margin-top: -16px;
 }
 
 .wp_result__header{
@@ -267,8 +377,9 @@
 .hc_drop-down__button {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    font-size: 14px;
+    font-size: 12.5px;
     color: #777;
+    font-family: Arial;
     padding-bottom: 7px;
     width: 105px;
     margin-left: -1px;
@@ -276,7 +387,8 @@
     text-align: center;
     vert-align: bottom;
     transition: background-color .15s ease-in-out;
-    text-transform: capitalize
+    text-transform: capitalize;
+    margin-top: 3px;
 }
 
 .hc_drop-down {
@@ -284,11 +396,11 @@
     position: relative;
     display: inline-block;
     width: 59px;
-    margin-left: 13px;
+    margin-left: 0px;
 }
 
 .hc_drop-down--margin-left{
-    margin-left: 22px;
+    margin-left: 18px;
 }
 
 .hc_drop-down__report-header{
@@ -428,14 +540,15 @@
 /*********************************************** File Divider ****************************************************/
 .rc_warning-bar {
     border-bottom : 1px solid #efefef;
-    background-color: #ffcc99;
+    background-color: #ffcc80;
     font-weight: bold;
-    width: 100%;
     font-size: 14px;
     height:29px;
     padding-top: 2.5px;
     text-align: center;
     color: white;
+    width: 100%;
+    margin-top: 5px;
 }
 
 /*result-status style*/
@@ -443,8 +556,9 @@
     margin-left: 165.5px;
     color: #77778c;
     font-size: 13.3px;
-    margin-top: 10px;
+    margin-top: 40px;
     width: 400px;
+    font-family: Arial;
 }
 
 .rc_result-not-found
@@ -486,4 +600,46 @@
 {
     font-size: 14.5px;
     margin-top: -2px;
+}
+
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+/*Photon Mail*/
+/*********************************************** File Divider ****************************************************/
+
+.photon_mail{
+    float: right;
+    margin-right: 27px;
+    background-color: #f1f1f1;
+    border: #e6e6e6 1px solid;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-left: 4px darkblue solid;
+    transition: background-color .2s;
+}
+
+.photon_mail:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: darkblue;
+    background-color: #e6e6e6;
+}
+
+.photon_mail__link{
+    font-size: 14.2px;
+    color: darkblue;
+    font-weight: bold;
 }

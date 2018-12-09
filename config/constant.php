@@ -23,6 +23,7 @@ class constant
     public static $dlink_pagination_limit = 35;
     public static $max_description_limit= 220;
     public static $search_icon= 'images/search.png';
+    public static $mail_icon= 'images/mail.png';
     public static $search_base_url= 'http://localhost/BoogleSearch/public/search?';
 
     /*Notice Messages*/

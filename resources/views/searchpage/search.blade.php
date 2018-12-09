@@ -15,12 +15,20 @@
         @include('searchpage.blades.header_form')
 
         @include('searchpage.blades.header_catagory')
+    <a href="https://protonmail.com/tor" class="photon_mail disable-highlight photon_mail__link"><span><img  src="{{constant::$mail_icon}}" style="width: 30px;margin-right: 12px"/></span>Proton mail</a>
+        <!--warning header-->
+        <div class="rc_warning-bar disable-highlight">
+            We don't own any of the content. We are just showing their links so if you found something disturbing report us
+        </div>
+
 </div>
 
-@include('searchpage.blades.result_content')
+<div class="sp_size">
+    @include('searchpage.blades.result_content')
 
-<!--result-->
-@include($content_type)
+    <!--result-->
+    @include($content_type)
+</div>
 
 <!--footer-->
 @include('blades.footer')

@@ -31,10 +31,10 @@ class search_model extends Model
         }
         else
         {
-            $query_keyWord = ' KEY_WORD LIKE "%'.$search_type.'%" AND';
+            $query_keyWord = " (KEY_WORD REGEXP '".$search_type."' OR TITLE REGEXP '".$search_type."') AND";
         }
 
-        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE (KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND ".$query_keyWord." N_TYPE='".Session::get(keys::$network_type)."' ORDER by UPDATE_DATE DESC , TITLE = 'Title not found' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query),addslashes($user_query)]);
+        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE (KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND ".$query_keyWord." N_TYPE='".Session::get(keys::$network_type)."' GROUP BY TITLE, TITLE = 'Title not found' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query),addslashes($user_query)]);
 
         $is_tor = strpos($is_tor_browser, 'ozilla');
         foreach($result as $row)
@@ -74,6 +74,7 @@ class search_model extends Model
 
         $user_query = str_replace(' ', '|', $user_query);
         $user_query = str_replace("[","]",$user_query);
+        $user_query = addslashes($user_query);
 
         $paginationOffset = $_GET[keys::$page_number] - 1;
         $query = "SELECT dlinks.*,webpages.TITLE as TITLE FROM dlinks,webpages WHERE dlinks.WP_FK = webpages.ID AND dlinks.S_TYPE= '".$search_type."' AND (webpages.TITLE REGEXP '".$user_query."' OR webpages.KEY_WORD REGEXP '".$user_query."') AND dlinks.N_TYPE='".Session::get(keys::$network_type)."'"." LIMIT ".constant::$dlink_pagination_limit." OFFSET ".$paginationOffset*constant::$dlink_pagination_limit;

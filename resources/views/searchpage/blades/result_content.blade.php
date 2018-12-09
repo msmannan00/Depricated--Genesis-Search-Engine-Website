@@ -1,8 +1,3 @@
-<!--warning header-->
-<div class="rc_warning-bar disable-highlight">
-    <p>We don't own any of the content. We are just showing their links so if you found something disturbing report us
-    </p>
-</div>
 
 <!--result-status-->
 @if($result_count!=0)
