@@ -2,7 +2,7 @@
 <!--result-status-->
 @if($result_count!=0)
     @if($content_type!='searchpage.dlinks.dlinks')
-        <p class="rc_result__status">About {{$result_count}} results found</p>
+        <p class="rc_result__status disable-highlight">About {{$result_count}} results found</p>
     @endif
 @else
     <div class="rc_result-not-found">

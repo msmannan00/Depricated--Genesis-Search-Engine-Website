@@ -9,7 +9,7 @@
                 <div class="dl_content__container" >
                     @foreach($dlink as $rows)
                         @php
-                            $searchQueryTitle = $rows[keys::$dlink_title];
+                            $searchQueryTitle = substr($rows[keys::$dlink_title],0,35);
                             $searchQueryUrl = $rows[keys::$dlink_url];
                             $searchExtension = $rows[keys::$dlink_extension];
                         @endphp
