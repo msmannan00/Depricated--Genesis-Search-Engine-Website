@@ -51,10 +51,26 @@ class search_model extends Model
                 $data_row[keys::$redirection] = $url_decoded;
             }
 
+            $title = $row->TITLE;
+            if(strlen($title)<20)
+            {
+                    $title = $title." | ".substr($row->DESCRIPTION,0,200);
+            }
+            $description = $row->DESCRIPTION;
+            if($description=="")
+            {
+                $description = "Description not found";
+            }
+
+            if($title=="")
+            {
+                $title = "Title not found";
+            }
+
             $data_row[keys::$url] = $url_decoded;
             $data_row[keys::$id] = $row->ID;
-            $data_row[keys::$title] = $row->TITLE;
-            $data_row[keys::$description] = $row->DESCRIPTION;
+            $data_row[keys::$title] = $title;
+            $data_row[keys::$description] = $description;
             $data_row[keys::$type] = $row->TYPE;
             $data_row[keys::$live_date] = $row->LIVE_DATE;
             $data_row[keys::$update_date] = $row->UPDATE_DATE;

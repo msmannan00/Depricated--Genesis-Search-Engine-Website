@@ -263,7 +263,7 @@
 }
 
 .wp_result__header{
-	font-size: 18px;
+	font-size: 17px;
 	margin-left: 165.5px;
 	color:#1a0dab;
 	cursor: pointer;
@@ -290,8 +290,9 @@
 
 .wp_result__description{
     font-family: arial,sans-serif;
-    margin-top: -17px;
-	font-size: 13.5px;
+    margin-top: -14px;
+    line-height: 17px;
+	font-size: 13px;
 	margin-left: 165.5px;
 	color:#545454;
 	width: 550px;
