@@ -1,5 +1,6 @@
 <head>
     <title>{{ config('app.name') }}</title><br>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

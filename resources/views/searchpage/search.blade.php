@@ -11,7 +11,7 @@
 
 <!--top bar-->
 <div class="sb_detail-header">
-        <img src="{{constant::$logo}}" class="sb_detail-header__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'" />
+        <img src="{{constant::$logo_small}}" class="sb_detail-header__logo disable-highlight" alt="" onclick="location.href='{{ url('') }}'" />
         @include('searchpage.blades.header_form')
 
         @include('searchpage.blades.header_catagory')

@@ -14,9 +14,9 @@ html, body {
 
 /*footer-bar style*/
 .footer-bar{
-    margin-top: 50px;
     width: 100%;
     position: absolute;
+    bottom: 0px;
 }
 
 .footer-bar__content{
@@ -96,11 +96,11 @@ html, body {
 }
 
 .grey-header__logo{
-    width: 80px;
+    width: 100px;
     float: left;
     cursor:pointer;
     margin-left: 10px;
-    margin-top: 8.5px;
+    margin-top: 2.5px;
 }
 
 .grey-header__catagories-container{

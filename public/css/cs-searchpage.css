@@ -19,12 +19,12 @@
 }
 
 .sb_detail-header__logo{
-    width: 91px;
+    width: 131px;
 	float: left;
     cursor:pointer;
-    margin-top: 4px;
-    margin-left: 30px;
-    margin-right: 17px;
+    margin-top: -5px;
+    margin-left: 15px;
+    margin-right: 0px;
 }
 
 .sb_detail-header__search-form{
@@ -35,7 +35,7 @@
 .sb_detail-header__search-icon{
 	width: 17px;
     position: absolute;
-    left: 746px;
+    left: 756px;
     top: 33px;
 }
 
@@ -62,11 +62,11 @@
 	height:46px;
 	box-shadow: 0 1.85px 1.5px -1.5px #999999;
 	border-color: #e7e7e7;
-	width:632px;
+	width:642px;
 	margin:0 auto;
 	display:block;
 	margin-top: -6px;
-	margin-left: 17px;
+	margin-left: 7px;
 }
 .sb_detail-header__search-input{
     align-self: center;
