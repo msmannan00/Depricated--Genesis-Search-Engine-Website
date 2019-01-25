@@ -75,7 +75,7 @@
         </div>
     @endforeach
 </div>
-
+<!--
 @if ($s_type_selected=="all" && $result_count>0 && $p_num==0)
     <div class="wp_info">
 
@@ -134,18 +134,18 @@
         </div>
     </div>
 @endif
-
+-->
 <!--pagination-->
 <form class="wp_pagination_view disable-highlight">
     @if ($result_count>0)
-         <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left wp_pagination__margin-left" id="previous" value="Previous">
-         <div class="wp_pagination_pages">
-             @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
-                 @if ($counter>=0)
+        <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left" id="previous" value="Previous">
+        <div class="wp_pagination_pages">
+            @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
+                @if ($counter>=0)
                     <a href="http://localhost/BoogleSearch/public/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ $counter+1 }}" class=" @if($counter == $p_num) active @endif" >{{ $counter+1 }}</a>
-                 @endif
-             @endfor
-         </div>
-         <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&p_num={{ $next_page }}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-right wp_pagination__margin-right" id="next" value="Next">
+                @endif
+            @endfor
+        </div>
+        <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&p_num={{ $next_page }}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-right wp_pagination__margin-right" id="next" value="Next">
     @endif
 </form>

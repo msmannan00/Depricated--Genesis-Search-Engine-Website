@@ -2,29 +2,29 @@
     width: 100%;
     min-height: 36.4vh;
     display: inline-block;
+    text-align:center;
 }
 
 .dl_content__container {
-    width: 95%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
+    margin-left: 8px;
+    text-align:center;
+    width:100%;
+    height: 80pt;
 }
 
 .dl_content__inner-container{
+    margin:1px;
     width: 260px;
     height:190px;
-    margin-left: 30px;
-    float: left;
-    margin-top: 20px;
+    margin-left: 7px;
+    text-align:left;
+    display:inline-block;
     background: -moz-linear-gradient(#fbfbfb,#fbfbfb);
     border-radius: 5px;
     border-bottom: 1px solid #e6e6e6;
     border-left: 1px solid #e6e6e6;
     border-right: 1px solid #e6e6e6;
     border-top: 1px solid #e6e6e6;
-
     transition: box-shadow 0.2s ease-in-out,border-bottom 0.2s ease-in-out;
  }
 

@@ -34,7 +34,11 @@ class search_model extends Model
             $query_keyWord = " (KEY_WORD REGEXP '".$search_type."' OR TITLE REGEXP '".$search_type."') AND";
         }
 
-        $result = DB::select(DB::raw("SELECT * FROM webpages WHERE (KEY_WORD REGEXP ? OR TITLE REGEXP ?) AND ".$query_keyWord." N_TYPE='".Session::get(keys::$network_type)."' GROUP BY TITLE, TITLE = 'Title not found' LIMIT ".constant::$pagination_limit." OFFSET ".$paginationOffset*constant::$pagination_limit),[addslashes($user_query),addslashes($user_query)]);
+        $webindexer_model = new webindexer_model();
+        $doc_id_list = $webindexer_model->searchQuery($user_query);
+        $this->total_rows = sizeof(explode(",",$doc_id_list));
+        $query = "SELECT * FROM webpages WHERE ID IN (".$doc_id_list.")";
+        $result = DB::select($query);
 
         $is_tor = strpos($is_tor_browser, 'ozilla');
         foreach($result as $row)
@@ -119,6 +123,7 @@ class search_model extends Model
     /*GET LIST OF ALL WEBSITES DESPITE PAGINATION*/
     public function getTotalRows()
     {
+        return $this->total_rows;
         $query_table = '';
         $query_keyWord = '';
         $search_type = $_GET[keys::$type];

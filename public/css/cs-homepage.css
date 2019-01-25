@@ -18,6 +18,11 @@
     margin-bottom: 18px;
 }
 
+/*footer-bar style*/
+.footer-bar{
+    position: absolute;
+}
+
 .hp_search__logo{
 	margin:0 auto;
 	display:block;

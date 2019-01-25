@@ -39,6 +39,11 @@
     margin-top: -4px;
 }
 
+/*footer-bar style*/
+.footer-bar{
+    position: fixed;
+}
+
 .aw_result__link{
     margin-top: 0px;
     font-size: 14px;

@@ -1,15 +1,16 @@
 /*result style*/
 .ru_result {
-    min-height: 65vh;
-    padding-left: 50px;
-    padding-right: 45px
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 .ru_result__complaint {
     padding-left: 50px;
     padding-right: 45px;
     height: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
 .ru_result__complaint--color {
@@ -25,12 +26,10 @@
     margin-right: 100px;
     font-size: 16px;
     color: black;
-    padding-bottom: 1px;
     padding-top: 15px;
     margin-top: 37px;
     padding-left: 20px;
     padding-right: 20px;
-    height: 485px;
 }
 
 .ru_complaint__container--height {
@@ -43,6 +42,11 @@
     font-weight: bold;
     text-overflow: clip;
     overflow: hidden;
+}
+
+/*footer-bar style*/
+.footer-bar{
+    position: fixed;
 }
 
 .ru_result__header{
@@ -102,7 +106,8 @@
     height:46px;
     box-shadow: 0 1.85px 1.5px -1.5px #999999;
     border-color: #e7e7e7;
-    width:575px;
+    width:100%;
+    max-width:575px;
     margin:0 auto;
     display:block;
     margin-top: 0px;
@@ -127,7 +132,6 @@
 
 .ru_search-form{
     width: 100%;
-    float: left
 }
 
 .ru-search-box__search-input:focus{

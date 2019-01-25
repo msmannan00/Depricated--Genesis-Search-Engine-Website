@@ -4,6 +4,7 @@ class constant
     /*global.blade.php*/
     public static $logo = "images/logo.png";
     public static $logo_small = "images/logo_small.png";
+    public static $logo_med = "images/logo_med.png";
     public static $image_icon = "images/img_download.png";
     public static $video_icon = "images/vid_download.png";
     public static $plus_icon = "images/plus.png";

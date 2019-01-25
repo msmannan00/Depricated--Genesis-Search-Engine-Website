@@ -18,7 +18,7 @@ class search extends Controller
     {
         $search_model = new search_model;
         $search_model->getNetworkType();
-        $totalRows = $search_model->getTotalRows();
+        ini_set('memory_limit', '4024M');
 
         return view('searchpage.search')
             ->with(keys::$query, $search_model->getSearchedQuery())
@@ -31,9 +31,9 @@ class search extends Controller
             ->with(keys::$type_selected, $search_model->getSearchTypeSelected())
             ->with(keys::$content_type, $search_model->getContentType())
             ->with(keys::$dlink, $search_model->getDLinkResult())
-            ->with(keys::$nav, $this->getNavBarIndex($totalRows))
+            ->with(keys::$nav, $this->getNavBarIndex($search_model->getTotalRows()))
             ->with(keys::$dlink_icon, $search_model->getdlinkIcon())
-            ->with(keys::$result_count, $totalRows);
+            ->with(keys::$result_count, $search_model->getTotalRows());
     }
 
     //FUNCTION TO CALCULATE NAVIGATION INITIAL INDEX SO THAT WE CAN SHOW PREVOUS 2 INDEX IF CURRENT INDEX IS IN MIDDLE

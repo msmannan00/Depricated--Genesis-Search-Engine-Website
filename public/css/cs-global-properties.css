@@ -15,7 +15,6 @@ html, body {
 /*footer-bar style*/
 .footer-bar{
     width: 100%;
-    position: absolute;
     bottom: 0px;
 }
 
@@ -104,9 +103,10 @@ html, body {
 }
 
 .grey-header__catagories-container{
-    margin-top: 3px;
+    margin-top: 5px;
     margin-right: 10px;
     text-align: right;
+    padding-bottom: -2px;
 }
 
 /*grey-header events*/
@@ -131,5 +131,16 @@ html, body {
 
 .notice-header__message{
     margin-top: 15px;
-    margin-left: 50px
+    margin-left: 21px
+}
+
+.container-outer { overflow: auto;width: 100%;overflow-y: hidden;scrollbar-color: #595959 #e6e6e6;scrollbar-width: thin}
+.container-inner { width: 710px; }
+
+.scroller {
+    width: 300px;
+    height: 100px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
 }
