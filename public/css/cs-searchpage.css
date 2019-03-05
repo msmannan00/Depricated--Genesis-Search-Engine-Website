@@ -28,13 +28,17 @@
 }
 
 .sb_detail-header__logo{
-    width: 131px;
-    height: 53px;
-    cursor:pointer;
-    margin-top: -5px;
-    margin-left: 0px;
-    margin-right: 10px;
+    width: 100px;
     float: left;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top: -6px;
+    font-size: 26px;
+    font-family: Calibri;
+    text-align: center;
+    color: darkblue;
+    text-decoration:none;
+    margin-bottom: 13px;
 }
 
 .sb_detail-header__search-form{

@@ -13,7 +13,7 @@
     <div class="hp_container_size">
         <!--top bar-->
         <div class="sb_detail-header">
-            <img src="{{constant::$logo_med}}" class="sb_detail-header__logo disable-highlight" alt="&nbsp;" onclick="location.href='{{ url('') }}'" />
+            <a href="./" class="sb_detail-header__logo disable-highlight" style="text-decoration:none;">$_POST</a>
             @include('searchpage.blades.header_form')
         </div>
 
