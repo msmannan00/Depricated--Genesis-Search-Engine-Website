@@ -73,21 +73,22 @@
             <p class="wp_result__description disable-highlight">{{ substr($searchQueryDescription, constant::$zero, constant::$max_description_limit).'...' }}</p>
         </div>
     @endforeach
-</div>
-<!--pagination-->
 
-@if ($result_count>1)
-    <form class="wp_pagination_view disable-highlight">
-        @if ($result_count>0)
-            <input type="button" onclick="window.location='/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left" id="previous" value="Previous">
-            <div class="wp_pagination_pages">
-                @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
-                    @if ($counter>=0)
-                        <a href="/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ $counter+1 }}" class=" @if($counter == $p_num) active @endif" >{{ $counter+1 }}</a>
-                    @endif
-                @endfor
-            </div>
-            <input type="button" onclick="window.location='/search?q={{ $query }}&p_num={{ $next_page }}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-right wp_pagination__margin-right" id="next" value="Next">
-        @endif
-    </form>
-@endif
+    <!--pagination-->
+    @if ($result_count>1)
+        <form class="wp_pagination_view disable-highlight" style="margin-bottom:80px">
+            @if ($result_count>0)
+                <input type="button" onclick="window.location='/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left" id="previous" value="Previous">
+                <div class="wp_pagination_pages">
+                    @for($counter = $nav_index; $counter < ($nav_index + constant::$navigation_limit) ; $counter++)
+                        @if ($counter>=0)
+                            <a href="/search?q={{ $query }}&&s_type={{$s_type_selected}}&p_num={{ $counter+1 }}" class=" @if($counter == $p_num) active @endif" >{{ $counter+1 }}</a>
+                        @endif
+                    @endfor
+                </div>
+                <input type="button" onclick="window.location='/search?q={{ $query }}&p_num={{ $next_page }}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-right wp_pagination__margin-right" id="next" value="Next">
+            @endif
+        </form>
+    @endif
+
+</div>

@@ -65,6 +65,20 @@ class search_model extends Model
         }
     }
 
+    public function getContentID()
+    {
+        $search_type = $this->getSearchType();
+        if($this->total_rows>0 && ($search_type=="image" || $search_type=="video" || $search_type=="doc"))
+        {
+            return constant::$web_id_dlink;
+        }
+        else
+        {
+            return constant::$web_id_page;
+        }
+
+    }
+
     public function getCatagory($type)
     {
         $data = array();

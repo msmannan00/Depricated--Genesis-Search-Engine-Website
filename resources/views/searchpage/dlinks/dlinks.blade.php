@@ -28,7 +28,7 @@
         @endif
     </div>
 <!--pagination-->
-<form class="dl_pagination_view disable-highlight">
+<form class="dl_pagination_view disable-highlight" style="margin-bottom:80px">
     @if ($result_count>0)
         <input type="button" onclick="window.location='http://localhost/BoogleSearch/public/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left wp_pagination__margin-left" id="previous" value="Previous">
         <div class="wp_pagination_pages">

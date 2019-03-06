@@ -13,7 +13,7 @@
     <div class="hp_container_size">
         <!--top bar-->
         <div class="sb_detail-header">
-            <a href="./" class="sb_detail-header__logo disable-highlight" style="text-decoration:none;">$_POST</a>
+            <a href="./" class="sb_detail-header__logo disable-highlight" style="text-decoration:none;">Genesis</a>
             @include('searchpage.blades.header_form')
         </div>
 
@@ -22,7 +22,7 @@
             We don't own any of the content. We are just showing their links so if you found something disturbing report us
         </div>-->
 
-        <div class="sp_size">
+        <div class="sp_size" id={{$content_id}}>
         @include('searchpage.blades.result_content')
         <!--result-->
             @include($content_type)

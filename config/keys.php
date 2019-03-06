@@ -30,6 +30,7 @@ class keys
     public static $content_type= 'content_type';
     public static $news_extras = 'news_extras';
     public static $finance_extras = 'finance_extras';
+    public static $content_id = 'content_id';
 
     /*dlink_data*/
     public static $dlink= 'dlink';

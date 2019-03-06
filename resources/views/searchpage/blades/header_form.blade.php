@@ -42,6 +42,7 @@
                 <input autocomplete="off" type="hidden" name="s_type" value="{{$s_type_selected}}">
             </form>
         </div>
+
     </div>
 </form>
 

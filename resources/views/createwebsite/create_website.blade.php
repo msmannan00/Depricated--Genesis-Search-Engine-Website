@@ -20,7 +20,7 @@
             <form class="ru_search-form"  method="GET" action="add_website" enctype="multipart/form-data" onsubmit="return rep.value!={{constant::$emptyString}}">
                 <input autocomplete="off" type="search" class="form-control ru-search-box" name="rep" value="" placeholder="Website url ...">
                 <textarea class="form-control ru-search-box ru-search-area" rows="4" cols="150" placeholder="(Optional) Describe why you are offering in this website..."></textarea>
-                <input type="submit" class="btn btn-primary" name="url" value="Report content">
+                <input type="submit" class="btn btn-primary" name="url" value="Add Website">
             </form>
         </div>
     </div>

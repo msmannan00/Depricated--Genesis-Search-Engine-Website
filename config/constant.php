@@ -29,6 +29,8 @@ class constant
     public static $search_base_url= 'http://localhost/BoogleSearch/public/search?';
     public static $news_text = 'news';
     public static $finance_text = 'finance';
+    public static $web_id_dlink = 'webcontent_dlink';
+    public static $web_id_page = 'webcontent';
 
     /*Notice Messages*/
     public static $notice_important = 'Important Notice';

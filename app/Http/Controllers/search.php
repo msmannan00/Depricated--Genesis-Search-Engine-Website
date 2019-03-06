@@ -33,7 +33,8 @@ class search extends Controller
             ->with(keys::$dlink_icon, $search_model->getdlinkIcon())
             ->with(keys::$result_count, $search_model->getTotalRows())
             ->with(keys::$news_extras, $search_model->getCatagory(constant::$news_text))
-            ->with(keys::$finance_extras, $search_model->getCatagory(constant::$finance_text));
+            ->with(keys::$finance_extras, $search_model->getCatagory(constant::$finance_text))
+            ->with(keys::$content_id, $search_model->getContentID());
     }
 
 
