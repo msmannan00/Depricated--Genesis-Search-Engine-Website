@@ -31,6 +31,7 @@ class keys
     public static $news_extras = 'news_extras';
     public static $finance_extras = 'finance_extras';
     public static $content_id = 'content_id';
+    public static $query_hint = 'query_hint';
 
     /*dlink_data*/
     public static $dlink= 'dlink';

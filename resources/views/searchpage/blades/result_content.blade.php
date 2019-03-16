@@ -4,6 +4,9 @@
     @if($content_type!='searchpage.dlinks.dlinks')
         <div class="rc_result__status disable-highlight">About {{$result_count}} results found</div>
     @endif
+    @if($query_hint!="")
+        <div class="rc_suggest__status disable-highlight">Search instead for <a href="/search?q={{$query_hint}}&p_num={{$p_num}}&s_type={{$s_type_selected}}" style="color: darkblue">{{$query_hint}}</a></div>
+    @endif
 @else
     <div class="rc_result-not-found">
         <!--<p class="rc_result-not-found__message-header"> Your search - <br><p class="rc_result-not-found__message-header--query"> <strong>{{$query}}</strong></p> did not match any documents in <strong>{{$n_type}}</strong> network</p>-->

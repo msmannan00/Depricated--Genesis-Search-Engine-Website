@@ -240,24 +240,41 @@ class SpellCheck extends Model {
      * @param string $sentence
      * @return array
      */
+
+    var $suggestion_made = false;
+
     public function checkSentence($sentence)
     {
-
         // Dismantle the sentence
-        $words = explode("|", $sentence);
-
+        $words = explode(" ", $sentence);
+        $new_words = "";
         // Retrieve the suggestions
-        foreach ($words as &$word) {
+        foreach ($words as &$word)
+        {
             $suggestions = $this->getSuggestions($word);
-            if (count($suggestions)) {
-                $word = $suggestions[0]['word'];
+            if (is_array($suggestions) && count($suggestions))
+            {
+
+                if(strpos( $sentence, $suggestions[0]['word'] ) ===  false)
+                {
+                    $this->suggestion_made = true;
+                    $new_words = $new_words." ".$suggestions[0]['word'];
+                }
+                else
+                {
+                    $new_words = $new_words." ".$word;
+                }
+            }
+            else
+            {
+                $new_words = $new_words." ".$word;
             }
         }
 
         // Put it together again
-        $sentence = implode(' ', $words);
+        $sentencea = $sentence." ".implode(' ', $words);
 
-        return $sentence;
+        return $new_words;
     }
 
     public function checkWord($word)

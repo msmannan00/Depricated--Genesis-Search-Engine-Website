@@ -14,20 +14,44 @@ class search_model extends Model
 {
     var $total_rows = 0;
     var $user_query = 0;
+    var $user_query_original = "";
+    var $user_query_suggested = "";
     var $seach_ids = "";
     var $typeSelector = "";
+
+    public function initializeSpellCheck()
+    {
+        $this->user_query =  $_GET[keys::$name];
+
+        $spchecker = new spellcheck("english.dic");
+        $spchecker->buildIndex('english.dic', 'dict');
+        $spell_dict = new spellcheck('dict');
+
+        $this->user_query_suggested="".$spell_dict->checkSentence($this->user_query);
+        $this->user_query = $this->user_query_suggested;
+        $this->user_query_original = $this->user_query;
+
+        if(!$spell_dict->suggestion_made)
+        {
+            $this->user_query_suggested = constant::$emptyString;
+        }
+
+    }
+
     /*GET WEBSITES BASED ON SEARCHED QUERY AND PAGINATION*/
     public function getSearchResult()
     {
+
+
         $stype = $this->getSearchTypeSelected();
         if($stype!='image' && $stype!='video' && $stype!='doc')
         {
             $data = array();
 
-            $user_query =  $_GET[keys::$name];
-            $user_query = preg_replace("/[^a-zA-Z ]/", "", $user_query);
-            $user_query = preg_replace("/[ ]/", ",", $user_query);
-            $this->user_query = $user_query;
+            $this->user_query =  $this->user_query_original;
+            $this->user_query = preg_replace("/[^a-zA-Z ]/", "", $this->user_query);
+            $this->user_query = preg_replace("/[ ]/", ",", $this->user_query);
+            $this->user_query = $this->user_query_original;
             $limitlower = ($this->getPageNumber())*constant::$pagination_limit;
             $limitupper = ($this->getPageNumber()+1)*constant::$pagination_limit;
             if($stype!='all')
@@ -35,7 +59,7 @@ class search_model extends Model
                 $this->typeSelector = "WHERE stype='".$stype."'";
             }
 
-            $result = DB::select(DB::raw("SELECT id,url,description,title, keyword, MATCH (title)  AGAINST (? IN BOOLEAN MODE) AS tscore,MATCH (keyword)  AGAINST (? IN BOOLEAN MODE) AS bscore FROM webpages ".$this->typeSelector." GROUP BY title having (tscore+bscore)>0 ORDER BY (tscore*3)+(bscore) DESC LIMIT ".$limitlower.",".$limitupper),[addslashes($user_query),addslashes($user_query)]);
+            $result = DB::select(DB::raw("SELECT id,url,description,title, keyword, MATCH (title)  AGAINST (? IN BOOLEAN MODE) AS tscore,MATCH (keyword)  AGAINST (? IN BOOLEAN MODE) AS bscore FROM webpages ".$this->typeSelector." GROUP BY title having (tscore+bscore)>0 ORDER BY (tscore*3)+(bscore) DESC LIMIT ".$limitlower.",".$limitupper),[addslashes($this->user_query),addslashes($this->user_query)]);
 
             foreach($result as $row)
             {
@@ -117,12 +141,12 @@ class search_model extends Model
             $isDlink = false;
         }
 
-        $user_query = $_GET[keys::$name];
-        $user_query = preg_replace("/[^a-zA-Z ]/", "", $user_query);
-        $this->user_query = $user_query;
+        $this->user_query = $this->user_query_original;
+        $this->user_query = preg_replace("/[^a-zA-Z ]/", "", $this->user_query);
+        $this->user_query = $this->user_query;
         $data_dlink = array();
 
-        $result = DB::select(DB::raw($sql_query), [addslashes($user_query),addslashes($user_query)]);
+        $result = DB::select(DB::raw($sql_query), [addslashes($this->user_query),addslashes($this->user_query)]);
 
         foreach ($result as $row) {
             $data_row[keys::$dlink_url] = $row->url;
@@ -188,6 +212,11 @@ class search_model extends Model
     public function getSearchedQuery()
     {
         return $_GET[keys::$name];
+    }
+
+    public function getSuggestedQuery()
+    {
+        return ltrim($this->user_query_suggested);
     }
 
     public function getPreviousPage()

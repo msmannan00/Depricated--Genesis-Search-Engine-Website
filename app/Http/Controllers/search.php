@@ -17,6 +17,7 @@ class search extends Controller
     public function searchResult(Request $request)
     {
         $search_model = new search_model;
+        $search_model->initializeSpellCheck();
 
         return view('searchpage.search')
             ->with(keys::$query, $search_model->getSearchedQuery())
@@ -34,7 +35,8 @@ class search extends Controller
             ->with(keys::$result_count, $search_model->getTotalRows())
             ->with(keys::$news_extras, $search_model->getCatagory(constant::$news_text))
             ->with(keys::$finance_extras, $search_model->getCatagory(constant::$finance_text))
-            ->with(keys::$content_id, $search_model->getContentID());
+            ->with(keys::$content_id, $search_model->getContentID())
+            ->with(keys::$query_hint, $search_model->getSuggestedQuery());
     }
 
 

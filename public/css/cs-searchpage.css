@@ -600,6 +600,16 @@
 }
 
 /*result-status style*/
+.rc_suggest__status{
+    color: #77778c;
+    font-size: 15.3px;
+    margin-top: 0px;
+    font-family: Arial;
+    float: left;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
 .rc_result__status{
     color: #77778c;
     font-size: 13.3px;
