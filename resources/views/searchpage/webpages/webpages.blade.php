@@ -76,7 +76,7 @@
 
     <!--pagination-->
     @if ($result_count>1)
-        <form class="wp_pagination_view disable-highlight" style="margin-bottom:80px">
+        <form class="wp_pagination_view id= disable-highlight" style="margin-bottom:80px">
             @if ($result_count>0)
                 <input type="button" onclick="window.location='/search?q={{ $query }}&p_num={{ $previous_page}}&s_type={{$s_type_selected}}'" class="wp_pagination__navigation wp_pagination--border-left" id="previous" value="Previous">
                 <div class="wp_pagination_pages">

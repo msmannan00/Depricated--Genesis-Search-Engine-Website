@@ -22,9 +22,9 @@
 }
 
 .ab_result__container{
-    border-radius: 5px;
     align-self: center;
-    box-shadow : 0px 4px 8px -1px #cccccc;
+    border-radius: 5px;
+    box-shadow : 6px 6px 6px -1px #cccccc;
     border-color: #e7e7e7;
     width: 100%;
     margin-right: 100px;
