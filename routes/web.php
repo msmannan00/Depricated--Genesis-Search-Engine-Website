@@ -27,7 +27,7 @@ Route::get('/reportus','reportus@getView');
 
 Route::get('/about','about@getView');
 
-Route::post('/update_cache','update_cache@getView');
+Route::get('/update_cache','update_cache@getView');
 
 Route::get('/crawler', 'crawler@getView');
 
