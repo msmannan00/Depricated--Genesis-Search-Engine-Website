@@ -27,10 +27,14 @@ Route::get('/reportus','reportus@getView');
 
 Route::get('/about','about@getView');
 
-Route::get('/update_cache','update_cache@getView');
+Route::post('/update_cache','update_cache@getView');
 
 Route::get('/crawler', 'crawler@getView');
 
 Route::get('/webindexer', 'webindexer@getView');
 
 Route::get('/create', 'create_website@getView');
+
+Route::get('/version', function () { return '1.0'; });
+
+Route::get('/android', 'android_apk@getView');

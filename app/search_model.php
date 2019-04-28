@@ -8,7 +8,7 @@ use Session;
 use constant;
 use db_constants;
 use keys;
-
+use App\SpellCorrect;
 
 class search_model extends Model
 {
@@ -18,9 +18,11 @@ class search_model extends Model
     var $user_query_suggested = "";
     var $seach_ids = "";
     var $typeSelector = "";
+    var $countquery = "";
 
     public function initializeSpellCheck()
     {
+
         $this->user_query =  $_GET[keys::$name];
 
         $spchecker = new spellcheck("english.dic");
@@ -28,7 +30,7 @@ class search_model extends Model
         $spell_dict = new spellcheck('dict');
 
         $this->user_query_suggested="".$spell_dict->checkSentence($this->user_query);
-        $this->user_query = $this->user_query_suggested;
+        //$this->user_query = $this->user_query_suggested;
         $this->user_query_original = $this->user_query;
 
         if(!$spell_dict->suggestion_made)
@@ -48,18 +50,23 @@ class search_model extends Model
         {
             $data = array();
 
-            $this->user_query =  $this->user_query_original;
-            $this->user_query = preg_replace("/[^a-zA-Z ]/", "", $this->user_query);
-            $this->user_query = preg_replace("/[ ]/", ",", $this->user_query);
             $this->user_query = $this->user_query_original;
             $limitlower = ($this->getPageNumber())*constant::$pagination_limit;
             $limitupper = ($this->getPageNumber()+1)*constant::$pagination_limit;
+            $filter = '';
             if($stype!='all')
             {
-                $this->typeSelector = "WHERE stype='".$stype."'";
+                $this->typeSelector = "and stype='".$stype."'";
             }
 
-            $result = DB::select(DB::raw("SELECT id,url,description,title, keyword, MATCH (title)  AGAINST (? IN BOOLEAN MODE) AS tscore,MATCH (keyword)  AGAINST (? IN BOOLEAN MODE) AS bscore FROM webpages ".$this->typeSelector." GROUP BY title having (tscore+bscore)>0 ORDER BY (tscore*3)+(bscore) DESC LIMIT ".$limitlower.",".$limitupper),[addslashes($this->user_query),addslashes($this->user_query)]);
+            if(isset($_GET['savesearch']) && $_GET['savesearch']=='on')
+            {
+                //$filter = ' AND saverank!=1';
+            }
+
+            $s_query = addslashes($this->user_query);
+
+            $result = DB::select(DB::raw("SELECT id,url,description,title, keyword,LEFT(url,POSITION('.onion' IN url)) as hosturl,SUBSTR(webpge.title,1,(10*CHAR_LENGTH(webpge.title))/100) as distitle, MATCH (webpge.title)  AGAINST (? IN NATURAL LANGUAGE MODE) AS title_relevance,MATCH (keyword)  AGAINST (? IN NATURAL LANGUAGE MODE) AS desc_relevance FROM webpages as webpge,(select url as disturl2,title as disttit2 from webpages GROUP BY disttit2) as distitle_join WHERE distitle_join.disttit2 = webpge.title and distitle_join.disturl2 = webpge.url and (MATCH (webpge.title) AGAINST (? IN NATURAL LANGUAGE MODE) + MATCH  (keyword) AGAINST (? IN NATURAL LANGUAGE MODE))>0.5  ".$filter.$this->typeSelector." GROUP BY hosturl,distitle ORDER BY ((title_relevance*15)+desc_relevance) DESC LIMIT ".constant::$pagination_limit." OFFSET ".$limitlower),[$s_query,$s_query,$s_query,$s_query]);
 
             foreach($result as $row)
             {
@@ -71,17 +78,17 @@ class search_model extends Model
                 if(strlen($title)<20){
                     $title = $title." | ".substr($description,0,200);
                 }
-                if($description==""){
+                if(strlen($description)<=1){
                     $description = "Description not found";
                 }
-                if($title==""){
+                if(strlen($title)<=1){
                     $title = "Title not found";
                 }
                 $this->seach_ids.=",'".$row->id."'";
                 $data_row[keys::$url] = $url_decoded;
                 $data_row[keys::$id] = $row->id;
-                $data_row[keys::$title] = $title;
-                $data_row[keys::$description] = $description;
+                $data_row[keys::$title] = ucfirst($title);
+                $data_row[keys::$description] = ucfirst($description);
                 array_push($data,$data_row);
             }
 
@@ -91,7 +98,7 @@ class search_model extends Model
 
     public function getContentID()
     {
-        $search_type = $this->getSearchType();
+        $search_type = $this->getSearchTypeSelected();
         if($this->total_rows>0 && ($search_type=="image" || $search_type=="video" || $search_type=="doc"))
         {
             return constant::$web_id_dlink;
@@ -125,10 +132,10 @@ class search_model extends Model
         $sql_query = "";
         $isDlink = true;
         $limitlower = ($this->getPageNumber())*constant::$pagination_limit;
-        $limitupper = ($this->getPageNumber()+1)*constant::$pagination_limit;
+        $limitupper = ($this->getPageNumber()+1)*constant::$dlink_pagination_limit;
 
         if($stype=='image' || $stype=='video' || $stype=='doc') {
-            $sql_query = "SELECT dlnk.url,web.title FROM webpages web,dlinks dlnk WHERE web.id=dlnk.wp_fk and (keyword REGEXP ? OR description REGEXP ?) and dtype='".$stype."'LIMIT ".$limitlower.",".$limitupper;
+            $sql_query = "SELECT dlnk.url,web.title FROM webpages web,dlinks dlnk WHERE web.id=dlnk.wp_fk and (keyword REGEXP ? OR description REGEXP ?) and dtype='".$stype."'LIMIT ".constant::$dlink_pagination_limit." OFFSET ".$limitlower;
         }
         else  if($this->seach_ids=="")
         {
@@ -145,6 +152,7 @@ class search_model extends Model
         $this->user_query = preg_replace("/[^a-zA-Z ]/", "", $this->user_query);
         $this->user_query = $this->user_query;
         $data_dlink = array();
+        $this->user_query = str_replace(' ', '|', $this->user_query);
 
         $result = DB::select(DB::raw($sql_query), [addslashes($this->user_query),addslashes($this->user_query)]);
 
@@ -169,6 +177,8 @@ class search_model extends Model
     /*GET LIST OF ALL WEBSITES DESPITE PAGINATION*/
     public function getTotalRows()
     {
+
+        return 1000;
         $stype = $this->getSearchTypeSelected();
 
         if($this->total_rows == 0)
@@ -190,7 +200,9 @@ class search_model extends Model
                 {
                     $localtype = $this->typeSelector . " AND ";
                 }
-                $result = DB::select(DB::raw("SELECT COUNT(DISTINCT(title)) as count FROM webpages ".$localtype." (MATCH(keyword) AGAINST('".$this->user_query."' IN BOOLEAN MODE)>0 || MATCH(title) AGAINST('".$this->user_query."' IN BOOLEAN MODE)>0) "));
+
+                $result = DB::select(DB::raw("SELECT COUNT(DISTINCT(title)) as count FROM webpages ".$localtype." (MATCH(keyword) AGAINST('".$this->user_query."' IN NATURAL LANGUAGE MODE) + MATCH(title) AGAINST('".$this->user_query."' IN NATURAL LANGUAGE MODE))>0.5"));
+
                 $this->total_rows = $result[0]->count;
                 return $this->total_rows;
             }
@@ -343,6 +355,11 @@ class search_model extends Model
             $data['all'] = 'active';
         }
         return $data;
+    }
+
+    public function getNoticeMessage()
+    {
+        return constant::$notice_header;
     }
 
 }

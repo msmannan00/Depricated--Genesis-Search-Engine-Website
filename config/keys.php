@@ -40,8 +40,12 @@ class keys
     public static $dlink_url= 'URL';
     public static $dlink_type = 'TYPE';
     public static $dlink_extension = 'extension';
+    public static $dtype = 'dtype';
 
     /*reportus.blade*/
     public static $report= 'rep';
+
+    /*android.blade*/
+    public static $downloadURL = 'download_URL';
 
 }

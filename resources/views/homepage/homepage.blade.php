@@ -2,20 +2,21 @@
 <html lang="en">
 
 <!--script initialization-->
-@include('blades.shared_initialization')
-@include('homepage.local_initialization')
+<head>
+    @include('blades.shared_initialization')
+    @include('homepage.local_initialization')
+</head>
 
-<body>
+<body style="opacity:0" class="delay-load">
 
     <div class="hp_container_size">
         <!--top bar-->
     @include('blades.light_header')
-    <div style="position: relative;min-height: 350px;"></div>
 
     <!--search bar-->
-        <form class="hp_search" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!={{constant::$emptyString}}">
-            <div style="font-size: calc(22px + 1.3vw);font-family: Calibri;text-align: center;color: darkblue;margin-bottom: -17px">GENESIS SEARCH</div>
-            <div style="margin-top: 8px;font-size: calc(13px + 0.45vw);font-family: Calibri;text-align: center;color: darkblue;margin-bottom: 20px">Online Freedom</div>
+        <form id="hp_search" method="GET" action="search" enctype="multipart/form-data" onsubmit="return q.value!={{constant::$emptyString}}">
+            <div class="hp_search__logo" id="hp_logo">Genesis Search</div>
+            <div style="margin-top: 8px;font-size: calc(13px + 0.45vw);font: Helvetica;text-align: center;color: #003d99;margin-bottom: 20px;">Online Freedom</div>
             <input autocomplete="off" type="text" class="form-control hp_search__search-box" name="q">
             <div class="hp_search__button-container disable-highlight">
                 <input type="submit" class="hp_search__search-button hp_search__search-button--left-spacing" id="searchbutton" value="Genesis Search">

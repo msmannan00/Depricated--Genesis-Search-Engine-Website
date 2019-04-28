@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\analytic;
 
 class homepage extends Controller
 {
@@ -13,7 +14,14 @@ class homepage extends Controller
     /*get view of controller*/
     public function getView()
     {
+        $this->sendAnalytics();
         return view('homepage.homepage');
+    }
+    
+    public function sendAnalytics()
+    {
+        $analytic_m = new analytic;
+        $analytic_m->log('homepage');
     }
 
 }

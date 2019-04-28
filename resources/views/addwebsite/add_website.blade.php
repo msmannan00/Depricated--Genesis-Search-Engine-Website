@@ -5,7 +5,7 @@
 @include('blades.shared_initialization')
 @include('addwebsite.local_initialization')
 
-<body>
+<body style="opacity:0" class="delay-load">
 
 <!--top bar -->
 <div class="hp_container_size">

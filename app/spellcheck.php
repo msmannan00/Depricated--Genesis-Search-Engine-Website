@@ -81,7 +81,7 @@ class SpellCheck extends Model {
     /**
      * Crate a new SpellChecker, open the data file
      *
-     * @param string $dictionary
+     * @param string $dictisonary
      */
     public function __construct($dictionary) {
 
@@ -216,16 +216,30 @@ class SpellCheck extends Model {
         $m = metaphone($word);
         $candidates = $this->_search($m);
 
+        //echo "i am here 1";
         // Return false if the search fails
         if (!$candidates) {
             return false;
         }
+        //echo "i am here 2";
 
         // Calculate the score for each hit
         $suggestions = array();
         foreach ($candidates as $candidate) {
             $score = similar_text($candidate, $word);
-            $suggestions[] = array('score' => $score, 'word' => $candidate);
+            $min_score_allowed = strlen($candidate)-((41*strlen($candidate))/100);
+            //echo "1(".$min_score_allowed . ")";
+            //echo "2(".$candidate . ")";
+            //echo "3(".$score . ")";
+            //echo "4(".$score>=$min_score_allowed . ")-----";
+            if($candidate==$word)
+            {
+                return $candidate;
+            }
+            if($score>=$min_score_allowed)
+            {
+                $suggestions[] = array('score' => $score, 'word' => $candidate);
+            }
         }
 
         // Sort them with the most relevant hits first
@@ -252,18 +266,24 @@ class SpellCheck extends Model {
         foreach ($words as &$word)
         {
             $suggestions = $this->getSuggestions($word);
+
             if (is_array($suggestions) && count($suggestions))
             {
-
-                if(strpos( $sentence, $suggestions[0]['word'] ) ===  false)
+                /*
+                echo "1 : " . $sentence . "--".$suggestions[0]['word'];
+                if(strpos( $sentence, $suggestions[0]['word']."" ) ===  false)
                 {
+                    echo "2";
                     $this->suggestion_made = true;
                     $new_words = $new_words." ".$suggestions[0]['word'];
                 }
                 else
                 {
+                    echo "3";
                     $new_words = $new_words." ".$word;
-                }
+                }*/
+                $this->suggestion_made = true;
+                $new_words = $new_words." ".$suggestions[0]['word'];
             }
             else
             {

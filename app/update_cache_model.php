@@ -20,8 +20,8 @@ class update_cache_model extends Model
         }
         else
         {
-            $url = $_GET[keys::$url];
-            $query = "INSERT INTO `dlinks`(`url`,`wp_fk`) VALUES ('".$_GET[keys::$url]."','".$_GET[keys::$webpage_id]."')";
+            $url = $_POST[keys::$url];
+            $query = "INSERT INTO `dlinks`(`url`,`wp_fk`,`dtype`) VALUES ('".$_POST[keys::$url]."','".$_POST[keys::$webpage_id]."','".$_POST[keys::$dtype]."')";
             DB::insert($query);
         }
     }

@@ -5,7 +5,7 @@
 @include('blades.shared_initialization')
 @include('torpage.local_initialization')
 
-<body>
+<body style="opacity:0" class="delay-load">
 
     <!--top bar -->
     @include('blades.grey_header')

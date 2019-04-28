@@ -26,14 +26,16 @@ class constant
     public static $max_description_limit= 220;
     public static $search_icon= 'images/search.png';
     public static $mail_icon= 'images/mail.png';
-    public static $search_base_url= 'http://localhost/BoogleSearch/public/search?';
+    public static $search_base_url= '/search?';
     public static $news_text = 'news';
     public static $finance_text = 'finance';
     public static $web_id_dlink = 'webcontent_dlink';
     public static $web_id_page = 'webcontent';
 
     /*Notice Messages*/
+    public static $notice_download = 'Mobile Application Download';
     public static $notice_important = 'Important Notice';
+    public static $notice_header = 'Notice';
     public static $notice_aboutus = 'About Us';
     public static $add_website_message_success = 'Your website has been added to our remote server. it will take 2 to 3 days to become live. make sure
         your webserver is up if the website is unreachable our server would try 3 times after that it will be removed
