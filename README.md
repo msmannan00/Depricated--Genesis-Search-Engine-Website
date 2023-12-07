@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # Genesis Search
 
 Genesis Search is a free and open-source tool built on the Laravel framework, designed for investigating the Dark Web. Despite the remarkable technological innovations in the fields of anonymity and privacy, the constant threat of human error persists. This tool aims to address the challenges associated with investigating the Dark Web by providing a user-friendly interface and powerful features.
@@ -14,7 +16,7 @@ Genesis Search is a free and open-source tool built on the Laravel framework, de
 
 To install Genesis Search, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/genesis-search.git`
+1. Clone the repository: `git clone https://github.com/msmannan00/Genesis-Search-Engine-Website.git`
 2. Navigate to the project directory: `cd genesis-search`
 3. Install dependencies: `composer install`
 4. Set up your environment variables: `cp .env.example .env` and configure your database settings
